@@ -1,1 +1,161 @@
-<h1>GUI1</h1>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="jquery.js"></script>
+	<script src="jquery.zoomooz.min.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div id="requirementPart">
+			<div id="trapezoid">Epic vision:<br/> We want to sell tickets for business trips</div>
+			<div class="vertical-arrow"></div><div class="arrow-down"></div>
+			<div id="reqFillIn">
+				<input id="reqinput" type="text"><br/>
+				<input id="submit" type="submit" value="Move req to req DB!">
+			</div>
+			<div id="reqBox"></div>
+			<div class="vertical-arrow"></div><div class="arrow-down"></div>
+			<div id="reqDBbox">Requirement database</div>
+		</div>
+		<div id="architecturePart">
+			<div id="functionalPart">
+				<div id="architectureTrapezoid" class="zoomTarget">Functional architecture
+					<div id="FAMproductScope">
+						<div id="FAMproductScopeContainer">
+							<div class="FAMarrowText" style="left: -45px; top:420px;">banking<br/>details</div>
+							<div class="FAMarrowText" style="left: 130px; top:410px;">terms of<br/>services</div>
+							<div class="FAMarrowText" style="left: 255px; top:390px;">options</div>
+							<div class="FAMarrowText" style="left: 455px; top:385px;">customer details</div>
+							<div class="FAMarrowText" style="left: 485px; top:320px;">ticketing<br/> contract</div>
+							<div class="FAMarrowText" style="left: 485px; top:225px;">event</br>request</div>
+							<div class="FAMarrowText" style="left: 355px; top:270px;">event details</div>
+							<div class="FAMarrowText" style="left: 255px; top:210px;">ticket types</div>
+							<div class="FAMarrowText" style="left: 80px; top:235px;">payee<br/>interaction</div>
+							<div class="FAMarrowText" style="left: 90px; top:120px;">booking</div>
+							<!--ticketing contract-->
+							<div class="FAMhorizontalLine" style="left: 446px; top: 230px;"></div><div class="FAMarrow-right" style="left: 525px; top: 225px;"></div>
+							<!--event request-->
+							<div class="FAMhorizontalLine" style="left: 446px; top: 150px;"></div><div class="FAMarrow-left" style="left: 480px; top: 144px;"></div>
+							<!--banking details-->
+							<div class="FAMhorizontalLine" style="left: -50px; top: 198.5px;"></div><div class="FAMarrow-left" style="left: -53px; top: 194px;"></div><div class="FAMarrow-right" style="left: 5px; top: 185px;"></div>
+
+							<div id="FAMmodule1" class="FAMmodule" style="width: 60px; height: 150px; background-color: #0000FF; color: #fff; left: 9px; top: 60px;">Payment</div>
+								<div id="FAMmodule1Submodule" class="FAMmoduleSubmodule">Contract management
+									<div id="FAMmodule1SubSubmodule1" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 70px; top: 20px;">Contract baseline</div>
+									<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 40px; top: 100px;">Event administration</div>
+									<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 40px; top: 170px;">Options handling</div>
+									<ul class="featureList">
+										<li>feature1</li>
+										<li>feature2</li>
+										<li>feature3</li>
+										<li>feature4</li>
+									</ul>
+									<!--contract version-->
+									<div class="FAMverticalLine" style="left: 100px; top: 40px;"></div><div class="FAMarrow-up" style="left: 97px; top: -5px;"></div>
+									<!--option details-->
+									<div class="FAMverticalLine" style="left: 100px; top: 60px;"></div><div class="FAMarrow-up" style="left: 97px; top: 28px;"></div><div class="FAMarrow-down" style="left: 96px; top: 52px;"></div>
+									<!--payee interaction-->
+									<div class="FAMhorizontalLine" style="left: -20px; top: 12px;"></div><div class="FAMarrow-left" style="left: -24px; top: 8px;"></div>
+									<!--ticket types-->
+									<div class="FAMhorizontalLine" style="left: -20px; top: -20px;"></div><div class="FAMarrow-left" style="left: -24px; top: -24px;"></div><div class="FAMarrow-right" style="left: 37px; top: -32px;"></div>
+									<!--terms of services-->
+									<div class="FAMhorizontalLine" style="left: -20px; top: 7px;"></div><div class="FAMverticalLine" style="left: 60px; top: -38px;"></div><div class="FAMarrow-left" style="left: -24px; top: -42px;"></div><div class="FAMarrow-up" style="left: 58px; top: -60px;"></div>
+									<!--options-->
+									<div class="FAMhorizontalLine" style="left: -20px; top: -10px;"></div><div class="FAMarrow-right" style="left: 37px; top: -15px;"></div>
+									<!--event details-->
+									<div class="FAMhorizontalLine" style="left: 140px; top: -90px;"></div><div class="FAMarrow-left" style="left: 140px; top: -95px;"></div>
+									<!--final contract-->
+									<div class="FAMhorizontalLine" style="left: 140px; top: -180px;"></div><div class="FAMarrow-right" style="left: 220px; top: -184px;"></div>
+								</div>
+							<!--booking-->
+							<div class="FAMhorizontalLine" style="left: 70px; top: -64px;"></div><div class="FAMarrow-left" style="left: 69px; top: -70px;"></div>
+							<div id="FAMmodule2" class="FAMmodule" style="width: 200px; height: 50px; background-color: #00FFFF; left: 150px; top: -100px;">Ticket sales</div>
+							<!--payee interaction-->
+							<div class="FAMhorizontalLine" style="left: 68px; top: -21.3px;"></div><div class="FAMarrow-right" style="left: 146px; top: -25.5px;"></div>
+							<div id="FAMmodule3" class="FAMmodule" style="width: 200px; height: 50px; background-color: #00FFFF; left: 150px; top: -73px;">Contract management</div>
+							<!--event details-->
+							<div class="FAMhorizontalLine" style="left: 350px; top: -84px;"></div><div class="FAMarrow-right" style="left: 416.5px; top: -90px;"></div><div class="FAMarrow-left" style="left: 350px; top: -98px;"></div>
+							<!--ticket types-->
+							<div class="FAMverticalLine" style="left: 250px; top: -182px;"></div><div class="FAMarrow-up" style="left: 247px; top: -220px;"></div><div class="FAMarrow-down" style="left: 246px; top: -191px;"></div>
+							<!--terms of services-->
+							<div class="FAMverticalLine" style="left: 180px; top: -140px;"></div><div class="FAMarrow-up" style="left: 176px; top: -184px;"></div>
+							<!--options-->
+							<div class="FAMverticalLine" style="left: 250px; top: -194px;"></div><div class="FAMarrow-up" style="left: 247px; top: -233px;"></div><div class="FAMarrow-down" style="left: 247px; top: -202px;"></div>
+							<div id="FAMmodule4" class="FAMmodule" style="width: 60px; height: 148px; background-color: #0000FF; color: #fff; left: 420px; top: -377px;">Acquisition</div>
+							<div id="FAMmodule5" class="FAMmodule" style="width: 100px; height: 50px; background-color: #fff; left: 90px; top: -350px;">Legal</div>
+							<div id="FAMmodule6" class="FAMmodule" style="width: 100px; height: 50px; background-color: #fff; left: 240px; top: -400px;">Merchandising</div>
+							<div id="FAMmodule7" class="FAMmodule" style="width: 100px; height: 50px; background-color: #fff; left: 395px; top: -450px;">CRM</div>
+							<!--customer details-->
+							<div class="FAMverticalLine" style="left: 450px; top: -545px;"></div><div class="FAMarrow-up" style="left: 446px; top: -570px;"></div><div class="FAMarrow-down" style="left: 446px; top: -552px;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="arrow-left"></div><div class="horizontal-arrow"></div><div class="arrow-right"></div>
+			<div id="technicalPart">
+				<div id="architectureTrapezoid" class="zoomTarget">Technical architecture</div>	
+			</div>
+			<div class="arrow-left"></div><div class="horizontal-arrow"></div><div class="arrow-right"></div>
+		</div>
+		<div id="sourceCodeAndManualPart">
+			<div id="box" class="zoomTarget">Configurator</div>
+			<div class="vertical-arrow">Binding</div><div class="arrow-down"></div>
+			<div id="box">Source code</div>
+			<div id="manualTestScript">User manual</div>
+			<div id="manualTestScript">Test script</div>
+		</div>	
+	</div>
+
+<!--- Jquery -->
+<script type="text/javascript">
+
+	$( "#submit" ).click(function() {
+
+		$('#reqBox').append('<div>' + $('#reqinput').val() + '</div>');
+		$("#reqBox").appendTo("#reqDBbox").show('slow');
+
+		//Wait until animation above is finished
+		$("#reqBox").promise().done(function () {
+
+			$('#FAMmodule1').css({"border-color": "red", 
+             "border-width":"3px", 
+             "border-style":"solid"});
+
+			$('#FAMmodule2').css({"border-color": "red", 
+             "border-width":"3px", 
+             "border-style":"solid"});
+
+			$('#FAMmodule3').css({"border-color": "red", 
+             "border-width":"3px", 
+             "border-style":"solid"});
+
+			$('#FAMmodule1SubSubmodule1').css({"border-color": "red", 
+	             "border-width":"3px", 
+	             "border-style":"solid"});
+
+			$('#FAMmodule1SubSubmodule2').css({"border-color": "red", 
+	             "border-width":"3px", 
+	             "border-style":"solid"});
+		});
+	
+	});
+
+	$( "#FAMmodule3" ).click(function() {
+
+ 		$( "#FAMmodule1Submodule" ).toggle('fast');
+ 		//$("#FAMproductScope").css({'-webkit-filter':'blur(5px)', 'filter':'blur(5px)','z-index':'999'});
+		$( "#FAMmodule1Submodule" ).animate({
+		    width: "200px",
+		    height: "240px",
+		    marginTop: '50px',
+		  }, 500 );
+
+	});
+
+	$( "#FAMmodule1SubSubmodule2" ).click(function() {
+		$( ".featurelist" ).toggle('fast');
+	});
+</script>
+<!--- end Jquery -->
+</body>
+</html>
