@@ -1,0 +1,163 @@
+html { font-family: 'Open Sans', sans-serif; }
+select { width: 300px; }
+
+.content { display: inline-flex; }
+
+.choose-role { width: 300px; margin: 50px auto;}
+.choose-role a { display: block; padding: 15px 20px; border: 1px solid #ccc; margin-top: 10px; color: #333;}
+.choose-role a:hover { background-color: #333; color: #FFF; cursor: pointer; text-decoration: none; }
+
+#requirements { display: inline-block;  width: 400px; min-height: 10px; background-color: #bbb; border: 1px solid #000; }
+#functional { display: inline-block;  width: 800px; min-height: 10px; background-color: #bbb; border: 1px solid #000;}
+#technical { display: inline-block;  width: 800px; min-height: 10px; background-color: #bbb; border: 1px solid #000;}
+#implementation { display: inline-block; width: 500px; min-height: 10px; background-color: #bbb; border: 1px solid #000;}
+
+
+/* From GUI1 */
+#trapezoid {
+    border-bottom: 100px solid red;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    height: 0;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vertical-arrow {
+    background: darkcyan;
+    padding: 15px 0;
+    width: 50px;
+    height: 100px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 20px solid darkcyan;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#FAMproductScope {
+	width: 545px;
+	height: 320px;
+	background-color: #ccc;
+	position: relative;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top: 50px;
+	margin-left: 100px;
+}
+
+#FAMproductScopeContainer {
+	position: absolute;
+	left: 10px;
+	top: -300px;
+}
+
+.FAMmodule {
+	position:absolute;
+	word-wrap: break-word;
+	 box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    z-index: 1;
+}
+
+.FAMmoduleSubmodule {
+	width: 80px;
+	height: 100px;
+	background-color: #73AD21;
+	position: absolute;
+	left: 100px;
+	top: 400px;
+	display: none;
+	z-index: 1000;
+}
+
+.close {
+	float:right;
+}
+
+.FAMmoduleSubSubmodule {
+	background-color: #fff;
+	position: absolute;
+	z-index: 1;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.featureList {
+	background-color: #000;
+	color: #fff;
+	position: absolute;
+	left: 40px;
+	top: 120px;
+	display: none;
+	z-index: 2;
+}
+
+.FAMhorizontalLine {
+  height: 0px;
+  width: 80px;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  position: absolute;
+}
+
+.FAMverticalLine {
+  height: 42px;
+  width: 0px;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  position: absolute;
+}
+
+.FAMarrow-up {
+	width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid black;
+	position: absolute;
+}
+
+.FAMarrow-down {
+	width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid black;
+	position: absolute;
+}
+
+.FAMarrow-right {
+	width: 0; 
+	height: 0; 
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 5px solid black;
+	position:absolute;
+}
+
+.FAMarrow-left {
+	width: 0; 
+	height: 0; 
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-right: 5px solid black;
+	position: absolute;
+}
+
+.FAMarrowText {
+	position: absolute;
+	font-size: 12px;
+	color: black;
+}

@@ -1,1 +1,120 @@
-<h1>GUI2</h1>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="css/select2.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />		
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.zoomooz.min.js"></script>
+		<script src="js/select2.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
+		<script src="js/custom.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<h1>GUI 2 THE SA tool, verlost u van al uw zorgen</h1>
+			<div class="content">
+				<div id="requirements">
+					<div id="trapezoid">Epic vision:<br/> We want to sell tickets for business trips</div>
+					<div class="vertical-arrow"></div>
+					<div class="arrow-down"></div>
+					<div class="selectedcontainer">
+						<ul id="selectedreqs">
+							
+						</ul>
+					</div>
+					<div class="database">
+						Requirements database:<br/>
+						<input type="hidden" id="searchreqs" style="width: 300px;" tabindex="-1" title="">					
+					</div>
+				</div>
+				
+				<div id="functional">
+					<div id="FAMproductScope">
+						<div id="FAMproductScopeContainer">
+							<div class="blur"></div>
+							<div class="FAMarrowText" style="left: -30px; top:420px;">banking<br>details</div>
+							<div class="FAMarrowText" style="left: 115px; top:480px;">terms of services</div>
+							<div class="FAMarrowText" style="left: 255px; top:510px;">options</div>
+							<div class="FAMarrowText" style="left: 455px; top:500px;">customer details</div>
+							<div class="FAMarrowText" style="left: 485px; top:440px;">ticketing<br> contract</div>
+							<div class="FAMarrowText" style="left: 485px; top:350px;">event<br>request</div>
+							<div class="FAMarrowText" style="left: 355px; top:440px;">event details</div>
+							<div class="FAMarrowText" style="left: 255px; top:410px;">ticket types</div>
+							<div class="FAMarrowText" style="left: 80px; top:440px;">payee<br>interaction</div>
+							<div class="FAMarrowText" style="left: 90px; top:350px;">booking</div>
+							<!--ticketing contract-->
+							<div class="FAMhorizontalLine" style="left: 470px; top: 470px;"></div><div class="FAMarrow-right" style="left: 550px; top: 467px;"></div>
+							<!--event request-->
+							<div class="FAMhorizontalLine" style="left: 470px; top: 380px;"></div><div class="FAMarrow-left" style="left: 480px; top: 376px;"></div>
+							<!--banking details-->
+							<div class="FAMhorizontalLine" style="left: -30px; top: 450px;"></div><div class="FAMarrow-left" style="left: -30px; top: 445px;"></div><div class="FAMarrow-right" style="left: 5px; top: 445px;"></div>
+
+							<div id="FAMmodule1" class="FAMmodule" style="width: 60px; height: 150px; background-color: #0000FF; color: #fff; left: 9px; top: 350px;">Payment</div>
+								<div id="FAMmodule1Submodule" class="FAMmoduleSubmodule">Contract management <div class="close" style="cursor: pointer;">X</div>
+									<div id="FAMmodule1SubSubmodule1" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 70px; top: 20px;">Contract baseline</div>
+									<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 40px; top: 100px;">Event administration</div>
+									<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 40px; top: 170px;">Options handling</div>
+									<ul class="featureList">
+										<li>feature1</li>
+										<li>feature2</li>
+										<li>feature3</li>
+										<li>feature4</li>
+									</ul>
+									<!--contract version-->
+									<div class="FAMverticalLine" style="left: 100px; top: 60px;"></div><div class="FAMarrow-up" style="left: 97px; top: 58px;"></div>
+									<!--option details-->
+									<div class="FAMverticalLine" style="left: 99px; top: 135px;"></div><div class="FAMarrow-up" style="left: 95px; top: 138px;"></div><div class="FAMarrow-down" style="left: 95px; top: 165px;"></div>
+									<!--payee interaction-->
+									<div class="FAMhorizontalLine" style="left: -20px; top: 130px;"></div><div class="FAMarrow-left" style="left: -24px; top: 127px;"></div>
+									<!--ticket types-->
+									<div class="FAMhorizontalLine" style="left: -20px; top: 105px;"></div><div class="FAMarrow-left" style="left: -24px; top: 102px;"></div>
+									<!--terms of services-->
+									<div class="FAMhorizontalLine" style="left: -20px; top: 153px;"></div><div class="FAMverticalLine" style="left: 60px; top: 110px;"></div><div class="FAMarrow-left" style="left: -24px; top:150px;"></div><div class="FAMarrow-up" style="left: 56px; top: 138px;"></div>
+									<!--options-->
+									<div class="FAMhorizontalLine" style="left: -20px; top: 190px;"></div><div class="FAMarrow-right" style="left: 37px; top: 187px;"></div>
+									<!--event details-->
+									<div class="FAMhorizontalLine" style="left: 140px; top: 120px;"></div><div class="FAMarrow-left" style="left: 140px; top: 117px;"></div>
+									<!--final contract-->
+									<div class="FAMhorizontalLine" style="left: 140px; top: 40px;"></div><div class="FAMarrow-right" style="left: 220px; top: 37px;"></div>
+								</div>
+							<!--booking-->
+							<div class="FAMhorizontalLine" style="left: 70px; top: 370px;"></div><div class="FAMarrow-left" style="left: 69px; top: 365px;"></div>
+							<div id="FAMmodule2" class="FAMmodule" style="width: 200px; height: 50px; background-color: #00FFFF; left: 150px; top: 350px;">Ticket sales</div>
+							<!--payee interaction-->
+							<div class="FAMhorizontalLine" style="left: 68px; top: 470px;"></div><div class="FAMarrow-left" style="left: 68px; top: 465px;"></div>
+							<div id="FAMmodule3" class="FAMmodule" style="width: 200px; height: 50px; background-color: #00FFFF; left: 150px; top: 450px;">Contract management</div>
+							<!--event details-->
+							<div class="FAMhorizontalLine" style="left: 350px; top: 470px;"></div><div class="FAMarrow-right" style="left: 416.5px; top: 467px;"></div><div class="FAMarrow-left" style="left: 350px; top: 467px;"></div>
+							<!--ticket types-->
+							<div class="FAMverticalLine" style="left: 251px; top: 402px; height:45px;"></div><div class="FAMarrow-up" style="left: 247px; top: 400px;"></div><div class="FAMarrow-down" style="left: 246px; top: 445px;"></div>
+							<!--terms of services-->
+							<div class="FAMverticalLine" style="left: 180px; top: 500px;"></div><div class="FAMarrow-up" style="left: 176px; top: 500px;"></div>
+							<!--options-->
+							<div class="FAMverticalLine" style="left: 250px; top: 500px;"></div><div class="FAMarrow-up" style="left: 247px; top: 500px;"></div><div class="FAMarrow-down" style="left: 247px; top: 525px;"></div>
+							<div id="FAMmodule4" class="FAMmodule" style="width: 60px; height: 148px; background-color: #0000FF; color: #fff; left: 420px; top: 350px;">Acquisition</div>
+							<div id="FAMmodule5" class="FAMmodule" style="width: 100px; height: 50px; background-color: #fff; left: 90px; top: 530px;">Legal</div>
+							<div id="FAMmodule6" class="FAMmodule" style="width: 100px; height: 50px; background-color: #fff; left: 240px; top: 530px;">Merchandising</div>
+							<div id="FAMmodule7" class="FAMmodule" style="width: 100px; height: 50px; background-color: #fff; left: 395px; top: 530px;">CRM</div>
+							<!--customer details-->
+							<div class="FAMverticalLine" style="left: 450px; top: 495px;"></div><div class="FAMarrow-up" style="left: 445px; top: 498px;"></div><div class="FAMarrow-down" style="left: 445px; top: 525px;"></div>
+						</div>
+					</div>
+				</div>
+		
+				<div id="technical">
+					
+				</div>
+				
+				<div id="implementation">
+					inhoud
+				</div>
+			</div>		
+		</div>
+		
+	</body>
+</html>
+
