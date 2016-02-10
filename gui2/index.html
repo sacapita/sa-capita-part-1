@@ -38,6 +38,7 @@
 				<div id="functional">
 					<h3>Functional arch</h3>
 					<div id="FAMproductScope">
+					<canvas id="myCanvas" width="450px" height="115px"></canvas>
 						<div id="FAMproductScopeContainer">
 							<div class="blur"></div>
 							<div class="FAMarrowText" style="left: -30px; top:420px;">banking<br>details</div>
@@ -58,6 +59,12 @@
 							<div class="FAMhorizontalLine" style="left: -30px; top: 450px;"></div><div class="FAMarrow-left" style="left: -30px; top: 445px;"></div><div class="FAMarrow-right" style="left: 5px; top: 445px;"></div>
 
 							<div id="FAMmodule1" class="FAMmodule" style="width: 60px; height: 150px; background-color: #0000FF; color: #fff; left: 9px; top: 350px;">Payment</div>
+							<!--booking-->
+							<div class="FAMhorizontalLine" style="left: 70px; top: 370px;"></div><div class="FAMarrow-left" style="left: 69px; top: 365px;"></div>
+							<div id="FAMmodule2" class="FAMmodule" style="width: 200px; height: 50px; background-color: #00FFFF; left: 150px; top: 350px;">Ticket sales</div>
+							<!--payee interaction-->
+							<div class="FAMhorizontalLine" style="left: 68px; top: 470px;"></div><div class="FAMarrow-left" style="left: 68px; top: 465px;"></div>
+							<div id="FAMmodule3" class="FAMmodule" style="width: 200px; height: 50px; background-color: #00FFFF; left: 150px; top: 450px;">Contract management</div>
 								<div id="FAMmodule1Submodule" class="FAMmoduleSubmodule">Contract management <div class="close" style="cursor: pointer;">X</div>
 									<div id="FAMmodule1SubSubmodule1" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 70px; top: 20px;">Contract baseline</div>
 									<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 40px; top: 100px;">Event administration</div>
@@ -85,12 +92,6 @@
 									<!--final contract-->
 									<div class="FAMhorizontalLine" style="left: 140px; top: 40px;"></div><div class="FAMarrow-right" style="left: 220px; top: 37px;"></div>
 								</div>
-							<!--booking-->
-							<div class="FAMhorizontalLine" style="left: 70px; top: 370px;"></div><div class="FAMarrow-left" style="left: 69px; top: 365px;"></div>
-							<div id="FAMmodule2" class="FAMmodule" style="width: 200px; height: 50px; background-color: #00FFFF; left: 150px; top: 350px;">Ticket sales</div>
-							<!--payee interaction-->
-							<div class="FAMhorizontalLine" style="left: 68px; top: 470px;"></div><div class="FAMarrow-left" style="left: 68px; top: 465px;"></div>
-							<div id="FAMmodule3" class="FAMmodule" style="width: 200px; height: 50px; background-color: #00FFFF; left: 150px; top: 450px;">Contract management</div>
 							<!--event details-->
 							<div class="FAMhorizontalLine" style="left: 350px; top: 470px;"></div><div class="FAMarrow-right" style="left: 416.5px; top: 467px;"></div><div class="FAMarrow-left" style="left: 350px; top: 467px;"></div>
 							<!--ticket types-->
@@ -116,7 +117,7 @@
 				<div id="implementation">
 					<h3>Implementation</h3>
 					<div id="sourceCodeAndManualPart">
-						<div id="box" class="zoomTarget">Configurator</div>
+						<div id="box">Configurator</div>
 						<div class="vertical-arrow">Binding</div><div class="arrow-down"></div>
 						<div id="box">Source code</div>
 						<div id="manualTestScript">User manual</div>
