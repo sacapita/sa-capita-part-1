@@ -3,6 +3,29 @@ $(function(){
 	
     initSelect2();
 	scrollToSection();
+	
+	
+  
+      var $section = $('body');
+      var $panzoom = $section.find('.container-fluid').panzoom();
+      $panzoom.parent().on('mousewheel.focal', function( e ) {
+        e.preventDefault();
+        var delta = e.delta || e.originalEvent.wheelDelta;
+        var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+        $panzoom.panzoom('zoom', zoomOut, {
+          increment: 0.1,
+          animate: false,
+          focal: e
+        });
+      });
+      
+      $section.find('.container-fluid').panzoom("pan", -200, -500, "zoom", 0.8);
+        
+      $("a.reset").on('click', function (){
+      	$panzoom.panzoom("resetPan");
+      	$panzoom.panzoom("resetZoom");
+      });
+	
 });
 
 function highlightText(string){
@@ -10,17 +33,15 @@ function highlightText(string){
 	var tokens = string.split(" ");
 	
 	for(i=0;i<tokens.length;i++){
-		$("div:contains('"+tokens[i]+"'):not(.select2-result-label)").each(function()
+		$("div:not(div.select2-result-label):contains('"+tokens[i]+"')").each(function()
 		{
-			if(tokens[i] != "a" && tokens[i] != "an" && tokens[i] != "to" && tokens[i] != "I" && tokens[i] != "the" && tokens[i] != "As"){
+			if(tokens[i] != "a" && tokens[i] != "an" && tokens[i] != "to" && tokens[i] != "I" && tokens[i] != "the" && tokens[i] != "As" && tokens[i] != "event"){
 			    var $el = $(this);			    
 			    var regex = new RegExp(tokens[i],"g");		
 			    $el.html( $el.html().replace(regex, "<span style=\"text-decoration: underline\">"+tokens[i]+"</span>") );
 		   	}
 		});
 	}
-	
-	return true;
 }
 
 function initSelect2(){

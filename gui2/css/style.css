@@ -44,6 +44,43 @@ select { width: 300px; }
     margin-right: auto;
 }
 
+#box {
+	width: auto;
+	height: 100px;
+	background-color: #ccc;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+
+#sourceCodeAndManualPart {
+	width: auto;
+	height: auto;
+	float:left;
+	margin-left: 40px;
+}
+
+#manualTestScript {
+	width: 100px;
+	height: 100px;
+	background-color: #ccc;
+	margin-left: auto;
+  	margin-right: auto;
+  	margin-top: 50px;
+}
+
+.blur {
+	width: 545px;
+	height: 320px;
+	position: absolute;
+	left: -10px;
+	top: 300px;
+	background-color: #fff;
+	opacity: 0.8;
+	z-index: 4;
+	display:none;
+}
+
 #FAMproductScope {
 	width: 545px;
 	height: 320px;

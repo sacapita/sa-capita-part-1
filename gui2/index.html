@@ -11,28 +11,32 @@
 		<script src="js/jquery.zoomooz.min.js"></script>
 		<script src="js/select2.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
+		<script src="js/jquery.panzoom.min.js"></script>
 		<script src="js/custom.js"></script>
 	</head>
 	<body>
 		<div class="container-fluid">
 			<h1>GUI 2 THE SA tool, verlost u van al uw zorgen</h1>
-			<div class="content">
+			<a href="#" class="reset">Reset</a>
+			<div class="content">				
 				<div id="requirements">
+					<h3>Requirement</h3>
 					<div id="trapezoid">Epic vision:<br/> We want to sell tickets for business trips</div>
 					<div class="vertical-arrow"></div>
-					<div class="arrow-down"></div>
+					<div class="arrow-down"></div>					
+					<div class="database">
+						Requirements database:<br/>
+						<input type="hidden" id="searchreqs" style="width: 300px;" tabindex="-1" title="">					
+					</div>
 					<div class="selectedcontainer">
 						<ul id="selectedreqs">
 							
 						</ul>
 					</div>
-					<div class="database">
-						Requirements database:<br/>
-						<input type="hidden" id="searchreqs" style="width: 300px;" tabindex="-1" title="">					
-					</div>
 				</div>
 				
 				<div id="functional">
+					<h3>Functional arch</h3>
 					<div id="FAMproductScope">
 						<div id="FAMproductScopeContainer">
 							<div class="blur"></div>
@@ -106,11 +110,18 @@
 				</div>
 		
 				<div id="technical">
-					
+					<h3>Technical arch</h3>
 				</div>
 				
 				<div id="implementation">
-					inhoud
+					<h3>Implementation</h3>
+					<div id="sourceCodeAndManualPart">
+						<div id="box" class="zoomTarget">Configurator</div>
+						<div class="vertical-arrow">Binding</div><div class="arrow-down"></div>
+						<div id="box">Source code</div>
+						<div id="manualTestScript">User manual</div>
+						<div id="manualTestScript">Test script</div>
+					</div>
 				</div>
 			</div>		
 		</div>
