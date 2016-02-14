@@ -112,19 +112,131 @@
 		
 				<div id="technical">
 					<h3>Technical arch</h3>
-				</div>
-				
-				<div id="implementation">
-					<h3>Implementation</h3>
-					<div id="sourceCodeAndManualPart">
-						<div id="box">Configurator</div>
-						<div class="vertical-arrow">Binding</div><div class="arrow-down"></div>
-						<div id="box">Source code</div>
-						<div id="manualTestScript">User manual</div>
-						<div id="manualTestScript">Test script</div>
+						<div id="toplayer">
+							<!--dependency from payment to sales-->
+							<div class="testarrow" style="-moz-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg); left: 1625px; top: 280px;"></div>
+							<div class="dependencyline" style="width: 130px; left: 1500px; top: 287px;"></div>
+							<!--dependency from payment to contract-->
+							<div class="testarrow" style="-moz-transform: rotate(135deg); -webkit-transform: rotate(135deg); transform: rotate(135deg); left: 1460px; top: 475px;"></div>
+							<div class="dependencyline" style="width: 110px; left: 1453px; top: 365px; -moz-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg);"></div>
+							<!--dependency from sales to contract-->
+							<div class="testarrow" style="-moz-transform: rotate(180deg); -webkit-transform: rotate(180deg); transform: rotate(180deg); left: 1520px; top: 483px;"></div>
+							<div class="dependencyline" style="width: 218px; left: 1670px; top: 323px; -moz-transform: rotate(135deg); -webkit-transform: rotate(135deg); transform: rotate(135deg);"></div>
+							<!--bi directional dependency from contract to merchandise-->
+							<div class="testarrow" style="-moz-transform: rotate(225deg); -webkit-transform: rotate(225deg); transform: rotate(225deg); left: 1550px; top: 530px;"></div>
+							<div class="testarrow" style="-moz-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg); left: 1625px; top: 515px;"></div>
+							<div class="dependencyline" style="width: 80px; left: 1550px; top: 522px;"></div>
+							<!--bi directional dependency from payment to event-->
+							<div class="testarrow" style="-moz-transform: rotate(225deg); -webkit-transform: rotate(225deg); transform: rotate(225deg); left: 1550px; top: 650px;"></div>
+							<div class="testarrow" style="-moz-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg); left: 1625px; top: 635px;"></div>
+							<div class="dependencyline" style="width: 80px; left: 1550px; top: 642px;"></div>
+							<!--dependency from contract to legal-->
+							<div class="testarrow" style="-moz-transform: rotate(135deg); -webkit-transform: rotate(135deg); transform: rotate(135deg); left: 1520px; top: 925px;"></div>
+							<div class="dependencyline" style="width: 272px; left: 1514px; top: 652px; -moz-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg);"></div>
+							<!--dependency from event to CRM interface-->
+							<div class="testarrow" style="-moz-transform: rotate(135deg); -webkit-transform: rotate(135deg); transform: rotate(135deg); left: 1741px; top: 870px;"></div>
+							<div class="dependencyline" style="width: 50px; left: 1734px; top: 822px; -moz-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg);"></div>
+							<!--assignment line from CRM to CRM interface-->
+							<div style="width: 22px; left: 1734px; top: 907px; -moz-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); position: absolute; border: 1px solid #000"></div>
+							Top layer
+							<div style="height: 30px; width: 150px; border: 1px solid #000; position: relative; left: 20px; top: 20px;">Payment Module</div>
+							<div style="height: 160px; width: 180px; border: 1px solid #000; position: relative; left: 20px; top: 20px;">
+								<div id="class" style="height: 130px; width: 150px; border: 1px solid #000; position: relative; left: 15px; top: 15px;">
+									<center>Payment</center>
+									<div class="classborder"></div>
+									- paymentinfo
+									<div class="classborder"></div>
+									+ getBankingDetails()</br>
+									+ getPayeeInt(contract)</br>
+									+ getBooking(sales)</br>
+									+ processBooking()
+								</div>
+							</div>
+							<div style="height: 30px; width: 150px; border: 1px solid #000; position: relative; left: 300px; top: -170px;">Sales Module</div>
+							<div style="height: 120px; width: 180px; border: 1px solid #000; position: relative; left: 300px; top: -170px; margin-bottom: -170px;">
+								<div id="class" style="height: 90px; width: 150px; border: 1px solid #000; position: relative; left: 15px; top: 15px;">
+									<center>Sales</center>
+									<div class="classborder"></div>
+									- salesinfo
+									<div class="classborder"></div>
+									+ getTicketType</br>(contract)
+								</div>
+							</div>
+						</div>
+						<div id="centrallayer">
+							Central layer
+							<div style="height: 30px; width: 150px; border: 1px solid #000; position: relative; left: 20px; top: 20px;">Contract Module</div>
+							<div style="height: 200px; width: 220px; border: 1px solid #000; position: relative; left: 20px; top: 20px;">
+								<div id="class" style="height: 170px; width: 190px; border: 1px solid #000; position: relative; left: 15px; top: 15px;">
+									<center>Contract</center>
+									<div class="classborder"></div>
+									- payeeinteraction</br>
+									- tickettype</br>
+									- contracteventdetails</br>
+									- contractoptions
+									<div class="classborder"></div>
+									+ getEvent(event)</br>
+									+ getTOS(legal)</br>
+									+ getOptions(merchandise)
+								</div>
+							</div>
+							<div style="height: 30px; width: 150px; border: 1px solid #000; position: relative; left: 300px; top: -230px;">Merchandising Module</div>
+							<div style="height: 120px; width: 180px; border: 1px solid #000; position: relative; left: 300px; top: -230px; margin-bottom: -230px;">
+								<div id="class" style="height: 90px; width: 150px; border: 1px solid #000; position: relative; left: 15px; top: 15px;">
+									<center>Merchandise</center>
+									<div class="classborder"></div>
+									- options
+									<div class="classborder"></div>
+									+ getContractOptions</br>(contract)
+								</div>
+							</div>
+							<div style="height: 30px; width: 150px; border: 1px solid #000; position: relative; left: 300px; top: 20px;">Acquisition Module</div>
+							<div style="height: 220px; width: 260px; border: 1px solid #000; position: relative; left: 300px; top: 20px; margin-bottom: 20px;">
+								<div id="class" style="height: 190px; width: 230px; border: 1px solid #000; position: relative; left: 15px; top: 15px;">
+									<center>Event</center>
+									<div class="classborder"></div>
+									- eventname</br>
+									- eventtype
+									<div class="classborder"></div>
+									+ getEventRequest()</br>
+									+ getTicketingContract()</br>
+									+ getContractEventDetails(contract)</br>
+									+ getCustomerDetails()</br>
+									+ getContractOptions</br>(contract)
+								</div>
+							</div>
+						</div>
+						<div id="bottomlayer">
+							Legal and externals
+							<div style="height: 30px; width: 150px; border: 1px solid #000; position: relative; left: 20px; top: 20px;">Legal Module</div>
+							<div style="height: 70px; width: 220px; border: 1px solid #000; position: relative; left: 20px; top: 20px;">
+								<div id="class" style="height: 50px; width: 190px; border: 1px solid #000; position: relative; left: 15px; top: 15px;">
+									<center>Legal</center>
+									<div class="classborder"></div>
+									- termsofservicess
+								</div>
+							</div>
+							<div style="border-radius: 50%; width: 30px; height: 30px; border: 1px solid #000; position: relative; left: 400px; top: -90px;"></div>
+							<div style="width: 20px; position: relative; left: 435; top: -115px;">CRMInterface</div>
+							<div style="height: 90px; width: 150px; border: 1px solid #000; position: relative; left: 350px; top: -89px; margin-bottom:-89px;">
+								<div style="height: 20px; width: 40px; border: 1px solid #000; position: relative; right: 20px; top: 20px; background-color: #fff;"></div>
+								<div style="height: 20px; width: 40px; border: 1px solid #000; position: relative; right: 20px; top: 30px; background-color: #fff;"></div>
+								<center>CRM</center>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>		
+					
+					<div id="implementation">
+						<h3>Implementation</h3>
+						<div id="sourceCodeAndManualPart">
+							<div id="box">Configurator</div>
+							<div class="vertical-arrow">Binding</div><div class="arrow-down"></div>
+							<div id="box">Source code</div>
+							<div id="manualTestScript">User manual</div>
+							<div id="manualTestScript">Test script</div>
+						</div>
+					</div>
+				</div>		
 		</div>
 		
 	</body>

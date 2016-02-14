@@ -12,6 +12,26 @@ select { width: 300px; }
 #technical { display: inline-block;  width: 800px; min-height: 10px; background-color: #bbb; border: 1px solid #000;}
 #implementation { display: inline-block; width: 500px; min-height: 10px; background-color: #bbb; border: 1px solid #000;}
 
+#toplayer { display: block;  width: 600px; min-height: 250px; background-color: #FFF; border: 1px solid #000; margin: 0 auto;}
+#centrallayer { display: block;  width: 600px; min-height: 450px; background-color: #FFF; border: 1px solid #000; margin: 0 auto;}
+#bottomlayer { display: block;  width: 600px; min-height: 250px; background-color: #FFF; border: 1px solid #000; margin: 0 auto;}
+.classborder {border: 1px solid #000; width:auto; position: relative;}
+
+.testarrow {
+  width: 0.8em;
+  height: 0.8em;
+  border-top: 0.2em solid #333;
+  border-right: 0.2em solid #333;
+  position: absolute;
+}
+
+.dependencyline {
+  height: 0px;
+  border-bottom: 2px dashed black;
+  border-right: 2px dashed black;
+  position: absolute;
+}
+
 
 /* From GUI1 */
 #trapezoid {
