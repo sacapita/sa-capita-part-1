@@ -1,26 +1,60 @@
 $(function(){
 	
+	//Global variables
+	$panzoom = null;
+	
+	//Functions
     initSelect2();
 	scrollToSection();
 	panZoom();
 	contractManagement();
-
+	
+	//Handlers
+	initResetPanZoomHandler();
+	
+	$('input').on('click', function(e){
+		$panzoom.panzoom("destroy");
+		$(this).focus();
+	}).on('blur', function(e){
+		var position = $('.container-fluid').position();
+		panZoom(position.left, position.top);		
+	});
+	
+	//Canvas
 	var canvas = document.getElementById("myCanvas");
-			var canvasContext = canvas.getContext('2d');
+	var canvasContext = canvas.getContext('2d');
 
-			canvasContext.beginPath();
-			canvasContext.strokeStyle = '#000';
-			canvasContext.moveTo(-90, -100);
-			canvasContext.lineTo(80, 120);
-			canvasContext.stroke();
+	canvasContext.beginPath();
+	canvasContext.strokeStyle = '#000';
+	canvasContext.moveTo(-90, -100);
+	canvasContext.lineTo(80, 120);
+	canvasContext.stroke();
 
-			canvasContext.beginPath();
-			canvasContext.moveTo(200, 0);
-			canvasContext.strokeStyle = '#000';
-			canvasContext.lineTo(410, 120);
-			canvasContext.stroke();
+	canvasContext.beginPath();
+	canvasContext.moveTo(200, 0);
+	canvasContext.strokeStyle = '#000';
+	canvasContext.lineTo(410, 120);
+	canvasContext.stroke();
 
 });
+
+function getCanvasCoords(x,y){
+
+    var matrix = $panzoom.panzoom("getMatrix");
+        
+    var calc_x = x * (1 / matrix[0]);
+    var calc_y = y * (1 / matrix[3]);
+
+    return {x:calc_x,y:calc_y};   
+}
+
+function initResetPanZoomHandler(){
+	$(document).bind('keypress', function(event) {	
+		if( event.which === 82 && event.shiftKey && $(document.activeElement).prop("tagName") == "BODY") {			
+			resetPanZoom();
+		}
+	});
+}
 
 function highlightText(string){
 	
@@ -80,28 +114,36 @@ function scrollToSection(){
 	
 }
 
-function panZoom(){
+function resetPanZoom(){	
+	$panzoom.panzoom("reset");	  
+}
+
+function panZoom(x,y){
+	x = typeof x !== 'undefined' ? x : 0;
+	y = typeof y !== 'undefined' ? y : 280;
 
 	var $section = $('body');
-      var $panzoom = $section.find('.container-fluid').panzoom();
-      $panzoom.parent().on('mousewheel.focal', function( e ) {
-        e.preventDefault();
-        var delta = e.delta || e.originalEvent.wheelDelta;
-        var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
-        $panzoom.panzoom('zoom', zoomOut, {
-          increment: 0.1,
-          animate: false,
-          focal: e
-        });
-      });
-      
-      $section.find('.container-fluid').panzoom("pan", 0, 0);
-      $section.find('.container-fluid').panzoom("zoom", 1.0);
-        
-      $("a.reset").on('click', function (){
-      	$panzoom.panzoom("resetPan");
-      	$panzoom.panzoom("resetZoom");
-      });
+    $panzoom = $section.find('.container-fluid').panzoom();
+	
+	$elem = $("#requirements");
+	$elem.panzoom("disable");
+	
+	$panzoom.parent().on('mousewheel.focal', function( e ) {
+		e.preventDefault();
+		var delta = e.delta || e.originalEvent.wheelDelta;
+		var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+		$panzoom.panzoom('zoom', zoomOut, {
+			increment: 0.1,
+			animate: false,
+			focal: e
+		});
+	});
+	
+	
+
+	$panzoom.panzoom("pan", x, y);
+	$panzoom.panzoom("zoom", 1.0);
+	
 }
 
 function contractManagement() {
