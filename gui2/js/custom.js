@@ -2,6 +2,8 @@ $(function(){
 	
 	//Global variables
 	$panzoom = null;
+	containerX = 0;
+	containerY = 130;
 	
 	//Functions
     initSelect2();
@@ -37,16 +39,6 @@ $(function(){
 	canvasContext.stroke();
 
 });
-
-function getCanvasCoords(x,y){
-
-    var matrix = $panzoom.panzoom("getMatrix");
-        
-    var calc_x = x * (1 / matrix[0]);
-    var calc_y = y * (1 / matrix[3]);
-
-    return {x:calc_x,y:calc_y};   
-}
 
 function initResetPanZoomHandler(){
 	$(document).bind('keypress', function(event) {	
@@ -114,13 +106,9 @@ function scrollToSection(){
 	
 }
 
-function resetPanZoom(){	
-	$panzoom.panzoom("reset");	  
-}
-
 function panZoom(x,y){
-	x = typeof x !== 'undefined' ? x : 0;
-	y = typeof y !== 'undefined' ? y : 280;
+	x = typeof x !== 'undefined' ? x : containerX;
+	y = typeof y !== 'undefined' ? y : containerY;
 
 	var $section = $('body');
     $panzoom = $section.find('.container-fluid').panzoom();
@@ -138,12 +126,15 @@ function panZoom(x,y){
 			focal: e
 		});
 	});
-	
-	
 
 	$panzoom.panzoom("pan", x, y);
+	console.log('init panzoom met ', x, y);
 	$panzoom.panzoom("zoom", 1.0);
 	
+}
+
+function resetPanZoom(){	
+	$panzoom.panzoom("pan", containerX, containerY);  
 }
 
 function contractManagement() {
