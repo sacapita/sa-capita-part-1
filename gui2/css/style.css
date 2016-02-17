@@ -72,9 +72,8 @@ select { width: 300px; }
     margin-right: auto;
 }
 
-#box {
+.box {
 	width: auto;
-	height: 100px;
 	background-color: #ccc;
 	margin-left: auto;
   	margin-right: auto;
@@ -87,6 +86,9 @@ select { width: 300px; }
 	float:left;
 	margin-left: 40px;
 }
+
+.user-manual ul { list-style-type: none; padding-left: 0px;}
+.user-manual ul  li { border-bottom: 1px solid #222; margin: 5px auto 5px 15px; }
 
 #manualTestScript {
 	height: 100px;
