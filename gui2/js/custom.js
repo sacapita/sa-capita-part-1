@@ -1,5 +1,5 @@
 var CA = {
-	panzoom: null,
+	pz: null,
 	containerX: 0,
 	containerY: 0,
 	stopWords: ['As','a','I','want','the','an','to'],
@@ -32,10 +32,10 @@ var CA = {
 
 		$panzoom.panzoom("pan", x, y);
 		$panzoom.panzoom("zoom", 1.0);
-		this.panzoom = $panzoom;
+		this.pz = $panzoom;
 	},
 	resetPanZoom: function(){	
-		CA.panzoom.panzoom("pan", this.containerX, this.containerY);  
+		CA.pz.panzoom("pan", this.containerX, this.containerY);  
 	},
 	initResetPanZoomHandler: function(){
 		$(document).bind('keypress', function(event) {	
@@ -48,7 +48,6 @@ var CA = {
 		var tokens = string.split(" ");
 		
 		for(i=0;i<tokens.length;i++){
-			//if(tokens[i] != "a" && tokens[i] != "an" && tokens[i] != "to" && tokens[i] != "I" && tokens[i] != "the" && tokens[i] != "As"){
 			if(this.stopWords.indexOf(tokens[i]) == -1){
 				//Specify the elements in which it is allowed to replace the html/text.
 				$('#functional, .selectedcontainer, #technical, #implementation').each(function()
@@ -71,19 +70,19 @@ var CA = {
 			{ id: 4, text: 'As a manager, I want to indicate a price' }
 			];
 		
-		$('#searchreqs').select2({
+		$('#select2-requirements-database').select2({
 			placeholder: "Select a user story",
 			allowClear: true,
 			data: { results: data},
 			multiple: true
 		}).on("select2-selecting", function(e) {
+			console.log(CA.pz.panzoom('instance'));
 			$("#selectedreqs").append("<li class="+e.choice.id+">"+e.choice.text+"</li>");
 			CA.highlightText(e.choice.text);
 		}).on("select2-removed", function(e) {
 			$("#selectedreqs li."+e.choice.id).remove();
 		});
 	},
-
 	scrollToSection: function(){
 		var section = window.location.hash;
 		switch(section){
@@ -101,8 +100,7 @@ var CA = {
 				break;
 			default:
 				break;
-		}
-		
+		}	
 	},
 	contractManagement: function() {
 		
@@ -142,10 +140,12 @@ var CA = {
 		canvasContext.stroke();
 	},
 	initTextboxFocusHandler: function(){
-		$('input,textbox,select').on('click', function(e){
-			CA.panzoom.panzoom("destroy");
+		$('input:not(.select2-input):not(#select2-requirements-database)').on('click', function(e){
+			CA.pz.panzoom("destroy");
 			$(this).focus();
+			console.log('click', this);
 		}).on('blur', function(e){
+			console.log('blur');
 			var position = $('.container-fluid').position();
 			CA.panZoom(position.left, position.top);		
 		});

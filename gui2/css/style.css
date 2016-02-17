@@ -89,7 +89,6 @@ select { width: 300px; }
 }
 
 #manualTestScript {
-	width: 100px;
 	height: 100px;
 	background-color: #ccc;
 	margin-left: auto;
