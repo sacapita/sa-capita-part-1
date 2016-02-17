@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		<div class="container-fluid">
-			<h1>GUI 2 THE SA tool, alles is een graaf</h1>
+			<h1>GUI 2 THE SA tool, everything is a grave</h1>
 			<div class="content">				
 				<div id="requirements">
 					<h3>Requirement</h3>
@@ -36,35 +36,24 @@
 				<div id="functional">
 					<h3>Functional arch</h3>
 					<div id="FAMproductScope">
-					<canvas id="myCanvas" width="450px" height="115px"></canvas>
+					<canvas id="contractManagementCanvas" width="450px" height="115px"></canvas>
 						<div id="FAMproductScopeContainer">
-							<div class="blur"></div>
-							<div class="FAMarrowText" style="left: -35px; top:415px;">banking<br>details</div>
-							<div class="FAMarrowText" style="left: 115px; top:480px;">terms of services</div>
-							<div class="FAMarrowText" style="left: 255px; top:510px;">options</div>
-							<div class="FAMarrowText" style="left: 455px; top:500px;">customer details</div>
-							<div class="FAMarrowText" style="left: 485px; top:440px;">ticketing<br> contract</div>
-							<div class="FAMarrowText" style="left: 485px; top:350px;">event<br>request</div>
-							<div class="FAMarrowText" style="left: 355px; top:440px;">event details</div>
-							<div class="FAMarrowText" style="left: 255px; top:410px;">ticket types</div>
-							<div class="FAMarrowText" style="left: 80px; top:435px;">payee<br>interaction</div>
-							<div class="FAMarrowText" style="left: 90px; top:350px;">booking</div>
 							<!--ticketing contract-->
-							<div class="FAMhorizontalLine" style="left: 470px; top: 470px;"></div><div class="FAMarrow-right" style="left: 550px; top: 467px;"></div>
+							<div class="FAMhorizontalLine" style="left: 470px; top: 470px;"></div><div class="FAMarrow-right" style="left: 550px; top: 467px;"></div><div class="FAMarrowText" style="left: 485px; top:440px;">ticketing<br> contract</div>
 							<!--event request-->
-							<div class="FAMhorizontalLine" style="left: 470px; top: 380px;"></div><div class="FAMarrow-left" style="left: 480px; top: 376px;"></div>
+							<div class="FAMhorizontalLine" style="left: 470px; top: 380px;"></div><div class="FAMarrow-left" style="left: 480px; top: 376px;"></div><div class="FAMarrowText" style="left: 485px; top:350px;">event<br>request</div>
 							<!--banking details-->
-							<div class="FAMhorizontalLine" style="left: -30px; top: 449px;"></div><div class="FAMarrow-left" style="left: -31px; top: 445px;"></div><div class="FAMarrow-right" style="left: 5px; top: 445px;"></div>
+							<div class="FAMhorizontalLine" style="left: -30px; top: 449px;"></div><div class="FAMarrow-left" style="left: -31px; top: 445px;"></div><div class="FAMarrow-right" style="left: 5px; top: 445px;"></div><div class="FAMarrowText" style="left: -35px; top:415px;">banking<br>details</div>
 
 							<div id="FAMmodule1" class="FAMmodule" style="width: 60px; height: 150px; background-color: #0000FF; color: #fff; left: 9px; top: 350px;">Payment</div>
 							<!--booking-->
 							<div class="FAMhorizontalLine" style="left: 70px; top: 369px;"></div><div class="FAMarrow-left" style="left: 69px; top: 365px;"></div>
-							<div id="FAMmodule2" class="FAMmodule" style="width: 200px; height: 50px; background-color: #00FFFF; left: 150px; top: 350px;">Ticket sales</div>
+							<div id="FAMmodule2" class="FAMmodule" style="width: 200px; height: 50px; background-color: #00FFFF; left: 150px; top: 350px;">Ticket sales</div><div class="FAMarrowText" style="left: 90px; top:350px;">booking</div>
 							<!--payee interaction-->
 							<div class="FAMhorizontalLine" style="left: 68px; top: 469px;"></div><div class="FAMarrow-left" style="left: 68px; top: 465px;"></div>
-							<div id="FAMmodule3" class="FAMmodule" style="width: 200px; height: 50px; background-color: #00FFFF; left: 150px; top: 450px;">Contract management</div>
+							<div id="FAMmodule3" class="FAMmodule" style="width: 200px; height: 50px; background-color: #00FFFF; left: 150px; top: 450px;">Contract management</div><div class="FAMarrowText" style="left: 80px; top:435px;">payee<br>interaction</div>
 								
-								<div id="FAMmodule1Submodule" class="FAMmoduleSubmodule">Contract management <div class="close" style="cursor: pointer;">X</div>
+							<div id="FAMmodule1Submodule" class="FAMmoduleSubmodule" style="width: 200px; height: 240px; zoom: 2; top: 300px; left: 400px;">Contract management <div class="close" style="cursor: pointer;">X</div>
 									<div id="FAMmodule1SubSubmodule1" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 70px; top: 20px;">Contract baseline</div>
 									<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 40px; top: 100px;">Event administration</div>
 									<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 40px; top: 170px;">Options handling</div>
@@ -75,36 +64,60 @@
 										<li>feature4</li>
 									</ul>
 									<!--contract version-->
-									<div class="FAMverticalLine" style="left: 100px; top: 60px;"></div><div class="FAMarrow-up" style="left: 96px; top: 60px;"></div>
+									<div class="FAMverticalLine" style="left: 100px; top: 60px;"></div><div class="FAMarrow-up" style="left: 96px; top: 60px;"></div><div class="FAMarrowText" style="left: 105px; top:75px;">contract version</div>
 									<!--option details-->
-									<div class="FAMverticalLine" style="left: 99px; top: 135px;"></div><div class="FAMarrow-up" style="left: 95px; top: 140px;"></div><div class="FAMarrow-down" style="left: 95px; top: 165px;"></div>
+									<div class="FAMverticalLine" style="left: 99px; top: 135px;"></div><div class="FAMarrow-up" style="left: 95px; top: 140px;"></div><div class="FAMarrow-down" style="left: 95px; top: 165px;"></div><div class="FAMarrowText" style="left: 105px; top:150px;">option details</div>
 									<!--payee interaction-->
-									<div class="FAMhorizontalLine" style="left: -20px; top: 130px;"></div><div class="FAMarrow-left" style="left: -24px; top: 127px;"></div>
+									<div class="FAMhorizontalLine" style="left: -20px; top: 130px;"></div><div class="FAMarrow-left" style="left: -24px; top: 127px;"></div><div class="FAMarrowText" style="left: -25px; top:115px;">payee interaction</div>
 									<!--ticket types-->
-									<div class="FAMhorizontalLine" style="left: -20px; top: 105px;"></div><div class="FAMarrow-left" style="left: -24px; top: 102px;"></div>
+									<div class="FAMhorizontalLine" style="left: -20px; top: 105px;"></div><div class="FAMarrow-left" style="left: -24px; top: 102px;"></div><div class="FAMarrowText" style="left: -24px; top:90px;">ticket types</div>
 									<!--terms of services-->
-									<div class="FAMhorizontalLine" style="left: -20px; top: 153px;"></div><div class="FAMverticalLine" style="left: 60px; top: 112px;"></div><div class="FAMarrow-left" style="left: -20px; top:149px;"></div><div class="FAMarrow-up" style="left: 56px; top: 139px;"></div>
+									<div class="FAMhorizontalLine" style="left: -18px; top: 152px;"></div><div class="FAMverticalLine" style="left: 60px; top: 112px;"></div><div class="FAMarrow-left" style="left: -22px; top:149px;"></div><div class="FAMarrow-up" style="left: 56px; top: 139px;"></div><div class="FAMarrowText" style="left: -20px; top:140px;">terms of services</div>
 									<!--options-->
-									<div class="FAMhorizontalLine" style="left: -20px; top: 192px;"></div><div class="FAMarrow-right" style="left: 35px; top: 187px;"></div>
+									<div class="FAMhorizontalLine" style="left: -20px; top: 191px;"></div><div class="FAMarrow-right" style="left: 36px; top: 187px;"></div><div class="FAMarrowText" style="left: 0px; top:180px;">options</div>
 									<!--event details-->
-									<div class="FAMhorizontalLine" style="left: 140px; top: 121px;"></div><div class="FAMarrow-left" style="left: 140px; top: 117px;"></div>
+									<div class="FAMhorizontalLine" style="left: 140px; top: 121px;"></div><div class="FAMarrow-left" style="left: 140px; top: 117px;"></div><div class="FAMarrowText" style="left: 150px; top:108px;">event details</div>
 									<!--final contract-->
-									<div class="FAMhorizontalLine" style="left: 140px; top: 41px;"></div><div class="FAMarrow-right" style="left: 220px; top: 37px;"></div>
+									<div class="FAMhorizontalLine" style="left: 140px; top: 41px;"></div><div class="FAMarrow-right" style="left: 220px; top: 37px;"></div><div class="FAMarrowText" style="left: 175px; top:20px;">final contract</div>
 								</div>
+
+							<div id="FAMmodule2Submodule" class="FAMmoduleSubmodule" style="width: 300px; height: 280px; zoom: 2; top: 300px; left: 0px; display: block;">Ticket sales <div class="close" style="cursor: pointer;">X</div>
+									<div id="FAMmodule1SubSubmodule1" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 30px; top: 20px;">Visitor<br>management</div>
+									<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 180px; top: 20px;">Event<br>registration</div>
+									<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 60px; top: 90px;">Ticket<br>selection</div>
+									<ul class="featureList">
+										<li>feature1</li>
+										<li>feature2</li>
+										<li>feature3</li>
+										<li>feature4</li>
+									</ul>
+									<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 150px; top: 155px;">Type<br>management</div>
+									<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 20px; top: 155px;">Pre-payment<br>arrangement</div>
+									<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 180px; top: 225px;">Event<br>reporting</div>
+									<div class="FAMverticalLine" style="left: 99.5px; top: 60px;"></div><div class="FAMarrow-down" style="left: 96px; top: 85px;"></div><div class="FAMarrowText" style="left: 105px; top:70px;">visitor details</div>
+									<div class="FAMverticalLine" style="left: 200px; top: 190px;"></div><div class="FAMarrow-up" style="left: 196px; top: 194px;"></div><div class="FAMarrow-down" style="left: 196px; top: 220px;"></div><div class="FAMarrowText" style="left: 205px; top:205px;">ticket overview</div>
+									<div class="FAMhorizontalLine" style="left: 280px; top: 250px;"></div><div class="FAMarrow-left" style="left: 280px; top: 247px;"></div><div class="FAMarrow-right" style="left: 358px; top: 247px;"></div><div class="FAMarrowText" style="left: 290px; top:238px;">reports</div>
+									<div class="FAMhorizontalLine" style="left: 250px; top: 170px;"></div><div class="FAMarrow-left" style="left: 250px; top: 166.5px;"></div><div class="FAMarrow-right" style="left: 328px; top: 166.5px;"></div><div class="FAMarrowText" style="left: 260px; top:145px;">ticket types</div>
+									<div class="FAMverticalLine" style="left: 35px; top: 52px; height: 100px"></div><div class="FAMverticalLine" style="left: 99.5px; top: 112px;"></div><div class="FAMarrow-down" style="left: 31.5px; top:150px;"></div><div class="FAMarrow-down" style="left: 96px; top: 150px;"></div><div class="FAMarrowText" style="left: 60px; top:135px;">final ticket</div>
+									<div class="FAMhorizontalLine" style="left: 165px; top: 109px; width: 35px;"></div><div class="FAMverticalLine" style="left: 224px; top: 50px; height: 100px;"></div><div class="FAMarrow-down" style="left: 220px; top: 149px;"></div><div class="FAMarrowText" style="left: 5px; top:100px;">payment<br>details</div><div class="FAMarrowText" style="left: 5px; top:100px;">payment<br>details</div><div class="FAMarrowText" style="left: 230px; top:100px;">package<br>structures</div>
+									<div class="FAMhorizontalLine" style="left: 282px; top: 34px;"></div><div class="FAMarrow-left" style="left: 280px; top: 30px;"></div><div class="FAMarrowText" style="left: 305px; top:10px;">event details</div>
+									<div class="FAMverticalLine" style="left: 199px; top: 110px; height:50px"></div><div class="FAMarrow-left" style="left: 160px; top: 105px;"></div><div class="FAMarrowText" style="left: 165px; top:98px;">templates</div>
+								</div>
+
 							<!--event details-->
-							<div class="FAMhorizontalLine" style="left: 350px; top: 471px;"></div><div class="FAMarrow-right" style="left: 416px; top: 467px;"></div><div class="FAMarrow-left" style="left: 349px; top: 467px;"></div>
+							<div class="FAMhorizontalLine" style="left: 350px; top: 471px;"></div><div class="FAMarrow-right" style="left: 416px; top: 467px;"></div><div class="FAMarrow-left" style="left: 349px; top: 467px;"></div><div class="FAMarrowText" style="left: 355px; top:440px;">event details</div>
 							<!--ticket types-->
-							<div class="FAMverticalLine" style="left: 251px; top: 402px; height:45px;"></div><div class="FAMarrow-up" style="left: 247px; top: 400px;"></div><div class="FAMarrow-down" style="left: 247px; top: 445px;"></div>
+							<div class="FAMverticalLine" style="left: 251px; top: 402px; height:45px;"></div><div class="FAMarrow-up" style="left: 247px; top: 400px;"></div><div class="FAMarrow-down" style="left: 247px; top: 445px;"></div><div class="FAMarrowText" style="left: 255px; top:410px;">ticket types</div>
 							<!--terms of services-->
-							<div class="FAMverticalLine" style="left: 180px; top: 503px;"></div><div class="FAMarrow-up" style="left: 176px; top: 500px;"></div>
+							<div class="FAMverticalLine" style="left: 180px; top: 503px;"></div><div class="FAMarrow-up" style="left: 176px; top: 500px;"></div><div class="FAMarrowText" style="left: 115px; top:490px;">terms of services</div>
 							<!--options-->
-							<div class="FAMverticalLine" style="left: 251px; top: 500px;"></div><div class="FAMarrow-up" style="left: 247px; top: 499px;"></div><div class="FAMarrow-down" style="left: 247px; top: 526px;"></div>
+							<div class="FAMverticalLine" style="left: 251px; top: 500px;"></div><div class="FAMarrow-up" style="left: 247px; top: 499px;"></div><div class="FAMarrow-down" style="left: 247px; top: 526px;"></div><div class="FAMarrowText" style="left: 255px; top:510px;">options</div>
 							<div id="FAMmodule4" class="FAMmodule" style="width: 60px; height: 148px; background-color: #0000FF; color: #fff; left: 420px; top: 350px;">Acquisition</div>
 							<div id="FAMmodule5" class="FAMmodule" style="width: 100px; height: 50px; background-color: #fff; left: 90px; top: 530px;">Legal</div>
 							<div id="FAMmodule6" class="FAMmodule" style="width: 100px; height: 50px; background-color: #fff; left: 240px; top: 530px;">Merchandising</div>
 							<div id="FAMmodule7" class="FAMmodule" style="width: 100px; height: 50px; background-color: #fff; left: 395px; top: 530px;">CRM</div>
 							<!--customer details-->
-							<div class="FAMverticalLine" style="left: 449px; top: 495px;"></div><div class="FAMarrow-up" style="left: 445px; top: 497px;"></div><div class="FAMarrow-down" style="left: 445px; top: 526px;"></div>
+							<div class="FAMverticalLine" style="left: 449px; top: 495px;"></div><div class="FAMarrow-up" style="left: 445px; top: 497px;"></div><div class="FAMarrow-down" style="left: 445px; top: 526px;"></div><div class="FAMarrowText" style="left: 455px; top:500px;">customer details</div>
 						</div>
 					</div>
 				</div>

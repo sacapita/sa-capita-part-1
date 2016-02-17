@@ -7,8 +7,8 @@ var CA = {
 		CA.panZoom();
 		CA.initSelect2();
 		CA.scrollToSection();
-		CA.initCanvas();
-		CA.contractManagement();
+		CA.contractManagementCanvas();
+		CA.FAMsubModuleTrigger();
 		CA.initResetPanZoomHandler();
 		CA.initTextboxFocusHandler();
 	},
@@ -102,11 +102,11 @@ var CA = {
 				break;
 		}	
 	},
-	contractManagement: function() {
+	FAMsubModuleTrigger: function() {
 		
 			$( "#FAMmodule3" ).click(function() {
 				$("#FAMproductScope").animate({ 'zoom': 0.7 }, 400);
-				$("#myCanvas").show('fast').promise().done(function () {
+				$("#contractManagementCanvas").show('fast').promise().done(function () {
 					$( "#FAMmodule1Submodule" ).show('fast');
 					$( "#FAMmodule1Submodule" ).animate({
 						zoom: 2.0,
@@ -119,12 +119,31 @@ var CA = {
 
 			$( "#FAMmodule1Submodule .close" ).click(function() {
 				$( "#FAMmodule1Submodule" ).hide('fast');
-				$("#myCanvas").hide('fast');
+				$("#contractManagementCanvas").hide('fast');
+				$("#FAMproductScope").animate({ 'zoom': 1.0 }, 400);
+			});
+		
+			$( "#FAMmodule2" ).click(function() {
+				$("#FAMproductScope").animate({ 'zoom': 0.7 }, 400);
+				$("#TicketSalesCanvas").show('fast').promise().done(function () {
+					$( "#FAMmodule2Submodule" ).show('fast');
+					$( "#FAMmodule2Submodule" ).animate({
+						zoom: 2.0,
+						"top": "300px",
+					}, 400 );
+
+				});
+
+			});
+
+			$( "#FAMmodule2Submodule .close" ).click(function() {
+				$( "#FAMmodule2Submodule" ).hide('fast');
+				$("#TicketSalesCanvas").hide('fast');
 				$("#FAMproductScope").animate({ 'zoom': 1.0 }, 400);
 			});
 	},
-	initCanvas: function(){
-		var canvas = document.getElementById("myCanvas");
+	contractManagementCanvas: function(){
+		var canvas = document.getElementById("contractManagementCanvas");
 		var canvasContext = canvas.getContext('2d');
 
 		canvasContext.beginPath();

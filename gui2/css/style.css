@@ -44,7 +44,7 @@ select { width: 300px; }
     margin-right: auto;
 }
 
-#myCanvas {
+#contractManagementCanvas {
 	position: absolute; 
 	left:160px; 
 	top: 180px; 
@@ -98,18 +98,6 @@ select { width: 300px; }
   	margin-top: 50px;
 }
 
-.blur {
-	width: 545px;
-	height: 320px;
-	position: absolute;
-	left: -10px;
-	top: 300px;
-	background-color: #fff;
-	opacity: 0.8;
-	z-index: 4;
-	display:none;
-}
-
 #FAMproductScope {
 	width: 545px;
 	height: 320px;
@@ -137,14 +125,11 @@ select { width: 300px; }
 }
 
 .FAMmoduleSubmodule {
-	width: 200px;
-	height: 240px;
 	background-color: #00FFFF;
 	position: absolute;
-	left: 100px;
-	top: 600px;
 	display: none;
 	z-index: 1000;
+	display: block;
 }
 
 .close {
@@ -224,6 +209,6 @@ select { width: 300px; }
 
 .FAMarrowText {
 	position: absolute;
-	font-size: 12px;
+	font-size: 8px;
 	color: black;
 }
