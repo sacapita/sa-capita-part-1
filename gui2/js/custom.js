@@ -1,9 +1,12 @@
 $(function(){
-	
+	$.fn.hasParent=function(e){
+	   return $(this).parents(e).length > 0;
+	}
+		
 	//Global variables
 	$panzoom = null;
 	containerX = 0;
-	containerY = 130;
+	containerY = 0;
 	
 	//Functions
     initSelect2();
@@ -49,28 +52,38 @@ function initResetPanZoomHandler(){
 }
 
 function highlightText(string){
-	
 	var tokens = string.split(" ");
 	
 	for(i=0;i<tokens.length;i++){
-		$("div:not(div.select2-result-label):contains('"+tokens[i]+"')").each(function()
+		$("div:contains('"+tokens[i]+"')").each(function()
 		{
-			if(tokens[i] != "a" && tokens[i] != "an" && tokens[i] != "to" && tokens[i] != "I" && tokens[i] != "the" && tokens[i] != "As" && tokens[i] != "event"){
-			    var $el = $(this);			    
-			    var regex = new RegExp(tokens[i],"g");		
-			    $el.html( $el.html().replace(regex, "<span style=\"text-decoration: underline\">"+tokens[i]+"</span>") );
+			console.log($(this));
+			var $el = $(this);	
+			
+			if(!$el.hasParent('.select2-drop') && !$el.hasClass('.select2-drop') && !$el.hasParent('.select2-container') && !$el.hasClass('.select2-container')){		
+				if(tokens[i] != "a" && tokens[i] != "an" && tokens[i] != "to" && tokens[i] != "I" && tokens[i] != "the" && tokens[i] != "As" && tokens[i] != "event"){
+					console.log($el);
+					var regex = new RegExp(tokens[i],"g");		
+					$el.html( $el.html().replace(regex, "<span style=\"text-decoration: underline\">"+tokens[i]+"</span>") );
+				}
 		   	}
 		});
 	}
+	/*
+	$('.select2-drop ul li div').each(function(){
+		var text = $(this).text();
+		$(this).html("<span class=\"select2-match\"></span>" + text);
+	});*/
 }
 
 function initSelect2(){
 	var data = [
-		{ id: 0, text: 'As a manager, I want to create an event'}, 
-		{ id: 1, text: 'As a manager, I want to publish the line-up' }, 
-		{ id: 2, text: 'As a manager, I want to change the event date' }, 
-		{ id: 3, text: 'As a manager, I want to fix Legal stuff' }, 
-		{ id: 4, text: 'As a manager, I want to indicate a price' }];
+		//{ id: 0, text: 'As a manager, I want to create an event'}, 
+		//{ id: 1, text: 'As a manager, I want to publish the line-up' }, 
+		//{ id: 2, text: 'As a manager, I want to change the event date' }, 
+		{ id: 3, text: 'As a manager, I want to fix Legal stuff' } 
+		//{ id: 4, text: 'As a manager, I want to indicate a price' }
+		];
 	
 	$('#searchreqs').select2({
 		placeholder: "Select a user story",
@@ -128,9 +141,7 @@ function panZoom(x,y){
 	});
 
 	$panzoom.panzoom("pan", x, y);
-	console.log('init panzoom met ', x, y);
-	$panzoom.panzoom("zoom", 1.0);
-	
+	$panzoom.panzoom("zoom", 1.0);	
 }
 
 function resetPanZoom(){	
