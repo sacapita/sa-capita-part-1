@@ -8,13 +8,11 @@ select { width: 300px; }
 .choose-role a:hover { background-color: #333; color: #FFF; cursor: pointer; text-decoration: none; }
 
 #requirements { display: inline-block;  width: 400px; min-height: 10px; background-color: #bbb; border: 1px solid #000; }
-#functional { display: inline-block;  width: 800px; min-height: 10px; background-color: #bbb; border: 1px solid #000;}
+#functional { display: inline-block;  width: 1000px; min-height: 10px; background-color: #bbb; border: 1px solid #000;}
 #technical { display: inline-block;  width: 800px; min-height: 10px; background-color: #bbb; border: 1px solid #000;}
 #implementation { display: inline-block; width: 500px; min-height: 10px; background-color: #bbb; border: 1px solid #000;}
 
-#toplayer { display: block;  width: 600px; min-height: 250px; background-color: #FFF; border: 1px solid #000; margin: 0 auto;}
-#centrallayer { display: block;  width: 600px; min-height: 450px; background-color: #FFF; border: 1px solid #000; margin: 0 auto;}
-#bottomlayer { display: block;  width: 600px; min-height: 250px; background-color: #FFF; border: 1px solid #000; margin: 0 auto;}
+
 .classborder {border: 1px solid #000; width:auto; position: relative;}
 
 .testarrow {
@@ -107,6 +105,7 @@ select { width: 300px; }
 	padding-right: 20px;
 	margin-top: 50px;
 	margin-left: 100px;
+	margin: 0 auto;
 }
 
 #FAMproductScopeContainer {
@@ -211,4 +210,30 @@ select { width: 300px; }
 	position: absolute;
 	font-size: 8px;
 	color: black;
+}
+
+#techcont {
+	width: 700px;
+	height: 900px;
+	background-color: #fff;
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+#techcontcont {
+	position: absolute;
+	left: -1250px;
+	top: -130px;
+}
+
+#toplayer {
+	height: 240px;
+}
+
+#centrallayer {
+	height: 450px;
+}
+
+#bottomlayer {
 }
