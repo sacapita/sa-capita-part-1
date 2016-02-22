@@ -8,6 +8,7 @@ var CA = {
 		CA.initSelect2();
 		CA.scrollToSection();
 		CA.contractManagementCanvas();
+		CA.ticketSalesCanvas();
 		CA.FAMsubModuleTrigger();
 		CA.initResetPanZoomHandler();
 		CA.initTextboxFocusHandler();
@@ -125,7 +126,7 @@ var CA = {
 		
 			$( "#FAMmodule2" ).click(function() {
 				$("#FAMproductScope").animate({ 'zoom': 0.7 }, 400);
-				$("#TicketSalesCanvas").show('fast').promise().done(function () {
+				$("#ticketSalesCanvas").show('fast').promise().done(function () {
 					$( "#FAMmodule2Submodule" ).show('fast');
 					$( "#FAMmodule2Submodule" ).animate({
 						zoom: 2.0,
@@ -138,7 +139,7 @@ var CA = {
 
 			$( "#FAMmodule2Submodule .close" ).click(function() {
 				$( "#FAMmodule2Submodule" ).hide('fast');
-				$("#TicketSalesCanvas").hide('fast');
+				$("#ticketSalesCanvas").hide('fast');
 				$("#FAMproductScope").animate({ 'zoom': 1.0 }, 400);
 			});
 	},
@@ -148,14 +149,30 @@ var CA = {
 
 		canvasContext.beginPath();
 		canvasContext.strokeStyle = '#000';
-		canvasContext.moveTo(-90, -100);
-		canvasContext.lineTo(80, 120);
+		canvasContext.moveTo(-360, -80);
+		canvasContext.lineTo(500, 155);
 		canvasContext.stroke();
 
 		canvasContext.beginPath();
-		canvasContext.moveTo(200, 0);
+		canvasContext.moveTo(200, 20);
 		canvasContext.strokeStyle = '#000';
-		canvasContext.lineTo(410, 120);
+		canvasContext.lineTo(770, 120);
+		canvasContext.stroke();
+	},
+	ticketSalesCanvas: function(){
+		var canvas = document.getElementById("ticketSalesCanvas");
+		var canvasContext = canvas.getContext('2d');
+
+		canvasContext.beginPath();
+		canvasContext.strokeStyle = '#000';
+		canvasContext.moveTo(-360, -80);
+		canvasContext.lineTo(500, 155);
+		canvasContext.stroke();
+
+		canvasContext.beginPath();
+		canvasContext.moveTo(200, 20);
+		canvasContext.strokeStyle = '#000';
+		canvasContext.lineTo(770, 120);
 		canvasContext.stroke();
 	},
 	initTextboxFocusHandler: function(){
