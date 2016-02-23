@@ -21,6 +21,7 @@ select { width: 300px; }
   border-top: 0.2em solid #333;
   border-right: 0.2em solid #333;
   position: absolute;
+  z-index: 1000;
 }
 
 .dependencyline {
