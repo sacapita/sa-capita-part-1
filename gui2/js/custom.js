@@ -7,8 +7,8 @@ var CA = {
 		CA.panZoom();
 		CA.initSelect2();
 		CA.scrollToSection();
-		CA.contractManagementCanvas();
-		CA.ticketSalesCanvas();
+		//CA.contractManagementCanvas();
+		//CA.ticketSalesCanvas();
 		CA.FAMsubModuleTrigger();
 		CA.initResetPanZoomHandler();
 		CA.initTextboxFocusHandler();
@@ -106,6 +106,8 @@ var CA = {
 	FAMsubModuleTrigger: function() {
 		
 			$( "#FAMmodule3" ).click(function() {
+				$("#line3").show();
+				$("#line4").show();
 				$("#FAMproductScope").animate({ 'zoom': 0.7 }, 400);
 				$("#contractManagementCanvas").show('fast').promise().done(function () {
 					$( "#FAMmodule1Submodule" ).show('fast');
@@ -121,10 +123,14 @@ var CA = {
 			$( "#FAMmodule1Submodule .close" ).click(function() {
 				$( "#FAMmodule1Submodule" ).hide('fast');
 				$("#contractManagementCanvas").hide('fast');
+				$("#line3").hide();
+				$("#line4").hide();
 				$("#FAMproductScope").animate({ 'zoom': 1.0 }, 400);
 			});
 		
 			$( "#FAMmodule2" ).click(function() {
+				$("#line1").show();
+				$("#line2").show();
 				$("#FAMproductScope").animate({ 'zoom': 0.7 }, 400);
 				$("#ticketSalesCanvas").show('fast').promise().done(function () {
 					$( "#FAMmodule2Submodule" ).show('fast');
@@ -140,9 +146,11 @@ var CA = {
 			$( "#FAMmodule2Submodule .close" ).click(function() {
 				$( "#FAMmodule2Submodule" ).hide('fast');
 				$("#ticketSalesCanvas").hide('fast');
+				$("#line1").hide();
+				$("#line2").hide();
 				$("#FAMproductScope").animate({ 'zoom': 1.0 }, 400);
 			});
-	},
+	}/*,
 	contractManagementCanvas: function(){
 		var canvas = document.getElementById("contractManagementCanvas");
 		var canvasContext = canvas.getContext('2d');
@@ -174,7 +182,7 @@ var CA = {
 		canvasContext.strokeStyle = '#000';
 		canvasContext.lineTo(770, 120);
 		canvasContext.stroke();
-	},
+	}*/,
 	initTextboxFocusHandler: function(){
 		$('input:not(.select2-input):not(#select2-requirements-database)').on('click', function(e){
 			CA.pz.panzoom("destroy");
