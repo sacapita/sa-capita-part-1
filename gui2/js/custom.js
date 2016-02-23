@@ -135,8 +135,8 @@ var CA = {
 				$("#ticketSalesCanvas").show('fast').promise().done(function () {
 					$( "#FAMmodule2Submodule" ).show('fast');
 					$( "#FAMmodule2Submodule" ).animate({
-						zoom: 2.0,
-						"top": "300px",
+						zoom: 1.5,
+						"top": "400px",
 					}, 400 );
 
 				});
