@@ -2,6 +2,7 @@ var CA = {
 	pz: null,
 	containerX: 0,
 	containerY: 0,
+	colorIndex: 0,
 	stopWords: ['As','a','I','want','the','an','to'],
 	construct: function(){
 		CA.panZoom();
@@ -45,8 +46,9 @@ var CA = {
 			}
 		});
 	},
-	highlightText: function(string){
+	highlightText: function(string, id){
 		var tokens = string.split(" ");
+		var colors = ['red','blue','green','orange'];
 		
 		for(i=0;i<tokens.length;i++){
 			if(this.stopWords.indexOf(tokens[i]) == -1){
@@ -55,12 +57,16 @@ var CA = {
 				{
 					var $el = $(this);	
 					var regex = new RegExp(tokens[i],"g");		
-					$el.html( $el.html().replace(regex, "<span style=\"text-decoration: underline\">"+tokens[i]+"</span>") );
+					$el.html( $el.html().replace(regex, "<span style=\"text-decoration: underline\" data-id=\""+ id +"\">"+tokens[i]+"</span>") );
 					var regex = new RegExp(tokens[i].capitalizeFirstLetter(),"g");	
-					$el.html( $el.html().replace(regex, "<span style=\"text-decoration: underline\">"+tokens[i].capitalizeFirstLetter() +"</span>") );
+					$el.html( $el.html().replace(regex, "<span style=\"text-decoration: underline\" data-id=\""+ id +"\">"+tokens[i].capitalizeFirstLetter() +"</span>") );
+					console.log(colors[CA.colorIndex]);
+					$("[data-id="+ id +"]").css({ "color": colors[CA.colorIndex] });	
+					
 				});
 			}
 		}
+		CA.colorIndex++;
 	},
 	initSelect2: function(){
 		var data = [
@@ -71,6 +77,9 @@ var CA = {
 			{ id: 4, text: 'As a manager, I want to indicate a price' }
 			];
 		
+		
+		
+		
 		$('#select2-requirements-database').select2({
 			placeholder: "Select a user story",
 			allowClear: true,
@@ -79,9 +88,10 @@ var CA = {
 		}).on("select2-selecting", function(e) {
 			console.log(CA.pz.panzoom('instance'));
 			$("#selectedreqs").append("<li class="+e.choice.id+">"+e.choice.text+"</li>");
-			CA.highlightText(e.choice.text);
+			CA.highlightText(e.choice.text, e.choice.id);
 		}).on("select2-removed", function(e) {
 			$("#selectedreqs li."+e.choice.id).remove();
+			$("[data-id="+e.choice.id+ "]").contents().unwrap();
 		});
 	},
 	scrollToSection: function(){
