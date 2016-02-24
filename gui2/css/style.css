@@ -7,10 +7,10 @@ select { width: 300px; }
 .choose-role a { display: block; padding: 15px 20px; border: 1px solid #ccc; margin-top: 10px; color: #333;}
 .choose-role a:hover { background-color: #333; color: #FFF; cursor: pointer; text-decoration: none; }
 
-#requirements { display: inline-block;  width: 400px; min-height: 10px; background-color: #bbb; border: 1px solid #000; }
-#functional { display: inline-block;  width: 1000px; min-height: 10px; background-color: #bbb; border: 1px solid #000;}
-#technical { display: inline-block;  width: 800px; min-height: 10px; background-color: #bbb; border: 1px solid #000;}
-#implementation { display: inline-block; width: 500px; min-height: 10px; background-color: #bbb; border: 1px solid #000;}
+#requirements { display: inline-block;  width: 400px; min-height: 10px; background-color: #fff;}
+#functional { display: inline-block;  width: 1000px; min-height: 10px; background-color: #fff; }
+#technical { display: inline-block;  width: 800px; min-height: 10px; background-color: #fff; }
+#implementation { display: inline-block; width: 500px; min-height: 10px; background-color: #fff; }
 
 
 .classborder {border: 1px solid #000; width:auto; position: relative;}
