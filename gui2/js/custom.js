@@ -13,6 +13,8 @@ var CA = {
 		CA.FAMsubModuleTrigger();
 		CA.initResetPanZoomHandler();
 		CA.initTextboxFocusHandler();
+		CA.checkUrlVp();
+		CA.drag();
 	},
 	panZoom: function(x,y){
 		x = typeof x !== 'undefined' ? x : this.containerX;
@@ -202,6 +204,38 @@ var CA = {
 			console.log('blur');
 			var position = $('.container-fluid').position();
 			CA.panZoom(position.left, position.top);		
+		});
+	},
+
+	checkUrlVp: function (){
+
+		if(window.location.href.indexOf("technicalviewpoint") > -1) {
+       		$('#techcont').show();    	
+       	}
+
+       	if(window.location.href.indexOf("functionalviewpoint") > -1) {
+       		$('#FAMproductScope').show();    	
+       	}
+
+       	if(window.location.href.indexOf("sourcecode") > -1) {
+       		$('#sourcecodebox').show();    	
+       	}
+
+       	if(window.location.href.indexOf("manual") > -1) {
+       		$('#manualbox').show();    	
+       	}
+	},
+
+	drag: function(){
+		$(document).click(function() {
+		    var position = $('.container-fluid').position();
+			CA.panZoom(position.left, position.top);
+		});
+
+		$('#FAMproductScope, #techcont').on('click', function(event){
+			CA.pz.panzoom("destroy");
+			$(this).draggable();
+			event.stopPropagation();
 		});
 	}
 };
