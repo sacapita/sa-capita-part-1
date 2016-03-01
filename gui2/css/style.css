@@ -7,21 +7,20 @@ select { width: 300px; }
 .choose-role a { display: block; padding: 15px 20px; border: 1px solid #ccc; margin-top: 10px; color: #333;}
 .choose-role a:hover { background-color: #333; color: #FFF; cursor: pointer; text-decoration: none; }
 
+#requirements,
+#functional,
+#technical,
+#implementation { margin-right: 10px; }
 #requirements { display: inline-block;  width: 400px; min-height: 10px; background-color: #fff;}
 #functional { display: inline-block;  width: 1000px; min-height: 10px; background-color: #fff; }
 #technical { display: inline-block;  width: 800px; min-height: 10px; background-color: #fff; }
 #implementation { display: inline-block; width: 500px; min-height: 10px; background-color: #fff; }
 
 /*draggable*/
-.draggable{
-    background-color: #000;
-    border: 1px solid #fff;
-}
-.highlight{
-    box-shadow: inset 0px 0px 10px 5px #fed700;
-}
-.red{
-    background-color:red;
+.highlight,
+.dragging{
+    background-color:#ccc;
+    border: 3px dashed #333;
 }
 
 

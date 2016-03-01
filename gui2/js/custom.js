@@ -22,10 +22,10 @@ var CA = {
 		$(".draggable").draggable({
 			start: function(e){
 			    currentDraggedElement = e.target;
-			    $(currentDraggedElement).addClass("red");
+			    $(currentDraggedElement).addClass("dragging");
 			},
 			stop: function(e){
-			    $(currentDraggedElement).removeClass("red");
+			    $(currentDraggedElement).removeClass("dragging");
 			},
 			helper: "clone",
 		    revert: "invalid"
@@ -40,11 +40,11 @@ var CA = {
 		$(".draggable").on("drop", function (e){
 		    CA.swapElements($(this)[0], currentDraggedElement);
 				$(this).removeClass("highlight");
+				$(currentDraggedElement).removeClass("dragging");
 		    currentDraggedElement = null;
 		});
 	},
 	swapElements: function(elm1, elm2) {
-		console.log(elm1, elm2);
 	    var parent1, next1,
 	        parent2, next2;
 
