@@ -5,16 +5,8 @@ var role = {
 	},
 
 	collapse: function(){
-		$( ".developer" ).click(function() {
-			 $("#contentbox").toggle();
-		});
-
-		$( ".architect" ).click(function() {
-			 $("#contentbox2").toggle();
-		});
-
-		$( ".manager" ).click(function() {
-			 $("#contentbox3").toggle();
+		$( ".developer, .architect, .manager" ).click(function() {
+			 $("#" +  $(this).attr("class") + "box").toggle();
 		});
 	},
 
@@ -43,7 +35,7 @@ var role = {
 		        // display final url string
 		        window.location = url;
 		        // or you can send checkbox values
-		        // window.location.href = 'my_page.php?' + url; 
+		        // window.location.href = 'my_page.php?' + url;
 		    } else {
 
 		    	window.location = 'index.html#developer';
@@ -74,7 +66,7 @@ var role = {
 		        // display final url string
 		        window.location = url;
 		        // or you can send checkbox values
-		        // window.location.href = 'my_page.php?' + url; 
+		        // window.location.href = 'my_page.php?' + url;
 		    } else {
 
 		    	window.location = 'index.html#architect';
@@ -106,14 +98,14 @@ var role = {
 		        // display final url string
 		        window.location = url;
 		        // or you can send checkbox values
-		        // window.location.href = 'my_page.php?' + url; 
+		        // window.location.href = 'my_page.php?' + url;
 		    } else {
 
 		    	window.location = 'index.html#manager';
 
 		    }
 
-		}); 
+		});
 
 	}
 
@@ -122,5 +114,5 @@ var role = {
 
 
 $(function(){
-	role.construct();	
+	role.construct();
 });

@@ -16,6 +16,7 @@ select { width: 300px; }
 #technical { display: inline-block;  width: 800px; min-height: 10px; background-color: #fff; }
 #implementation { display: inline-block; width: 500px; min-height: 10px; background-color: #fff; }
 
+.edit_epic {  width: 80%; border: 1px solid #333; margin-bottom: 30px; }
 /*draggable*/
 .draggable { border: 3px solid #FFF; }
 .highlight,

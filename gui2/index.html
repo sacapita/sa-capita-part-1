@@ -18,12 +18,25 @@
 		<div class="container-fluid">
 			<h1>GUI 2 THE SA tool</h1>
 			<div class="content">
+				<div id="configurator">
+					<h3>Configurator</h3>
+					<input type="checkbox" name="viewpoint1" value="functional">Functional viewpoint<br/>
+					<input type="checkbox" name="viewpoint1" value="technical">Technical viewpoint<br/>
+					<input type="checkbox" name="viewpoint1" value="sourcecode" checked>Source code<br/>
+					<input type="checkbox" name="viewpoint1" value="manual">Manual<br/><br/>
+
+					Epic vision:<br/>
+					<select name="epics" id="epics">
+						<option value="">We want to sell tickets for business trips</option>
+						<option value="">Andere epic</option>
+					</select><br/><br/>
+				</div>
 				<div id="requirements" class="draggable">
 
-					<h3>Requirement</h3>
-					<div id="trapezoid">Epic vision:<br/> We want to sell tickets for business trips</div>
-					<div class="vertical-arrow"></div>
-					<div class="arrow-down"></div>
+					<h3>Requirements</h3>
+					Epic vision:<br/>
+					<textarea class="edit_epic">We want to sell tickets for business trips</textarea>
+
 					<div class="database">
 						User story database:<br/>
 						<input type="hidden" id="select2-requirements-database" style="width: 300px;" tabindex="-1" title="">

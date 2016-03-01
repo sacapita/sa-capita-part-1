@@ -15,7 +15,29 @@ var CA = {
 		CA.initTextboxFocusHandler();
 		CA.checkUrlVp();
 		CA.drag();
-		//CA.dragWindows();
+		CA.dragWindows();
+		CA.configurator();
+	},
+	configurator: function(){
+		$("#configurator [name=viewpoint1]").on("click", function(){
+			console.log($(this).val());
+			switch ($(this).val()) {
+				case "functional":
+					$("#FAMproductScope").toggle();
+					break;
+					case "technical":
+						$("#techcont").toggle();
+						break;
+						case "manual":
+							$("#manualbox").toggle();
+							break;
+							case "sourcecode":
+								$("#sourcecodebox").toggle();
+								break;
+				default:
+
+			}
+		})
 	},
 	dragWindows: function(){
 		var currentDraggedElement;
@@ -61,7 +83,7 @@ var CA = {
 		y = typeof y !== 'undefined' ? y : this.containerY;
 
 		var $section = $('body');
-		$panzoom = $section.find('.container-fluid').panzoom();
+		$panzoom = $section.find('.container-fluid').panzoom({ disablePan: true });
 
 		$panzoom.parent().on('mousewheel.focal', function( e ) {
 			e.preventDefault();
@@ -74,7 +96,7 @@ var CA = {
 			});
 		});
 
-		$panzoom.panzoom("pan", x, y);
+		//$panzoom.panzoom("pan", x, y);
 		$panzoom.panzoom("zoom", 1.0);
 		this.pz = $panzoom;
 	},
@@ -120,21 +142,20 @@ var CA = {
 			];
 
 
-
-
-		$('#select2-requirements-database').select2({
-			placeholder: "Select a user story",
-			allowClear: true,
-			data: { results: data},
-			multiple: true
-		}).on("select2-selecting", function(e) {
-			console.log(CA.pz.panzoom('instance'));
-			$("#selectedreqs").append("<li class="+e.choice.id+">"+e.choice.text+"</li>");
-			CA.highlightText(e.choice.text, e.choice.id);
-		}).on("select2-removed", function(e) {
-			$("#selectedreqs li."+e.choice.id).remove();
-			$("[data-id="+e.choice.id+ "]").contents().unwrap();
-		});
+			$("#epics").select2();
+			$('#select2-requirements-database').select2({
+				placeholder: "Select a user story",
+				allowClear: true,
+				data: { results: data},
+				multiple: true
+			}).on("select2-selecting", function(e) {
+				console.log(CA.pz.panzoom('instance'));
+				$("#selectedreqs").append("<li class="+e.choice.id+">"+e.choice.text+"</li>");
+				CA.highlightText(e.choice.text, e.choice.id);
+			}).on("select2-removed", function(e) {
+				$("#selectedreqs li."+e.choice.id).remove();
+				$("[data-id="+e.choice.id+ "]").contents().unwrap();
+			});
 	},
 	scrollToSection: function(){
 		var section = window.location.hash;
