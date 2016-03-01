@@ -5,7 +5,7 @@ var CA = {
 	colorIndex: 0,
 	stopWords: ['As','a','I','want','the','an','to'],
 	construct: function(){
-		CA.panZoom();
+		//CA.panZoom();
 		CA.initSelect2();
 		CA.scrollToSection();
 		//CA.contractManagementCanvas();
@@ -14,7 +14,47 @@ var CA = {
 		CA.initResetPanZoomHandler();
 		CA.initTextboxFocusHandler();
 		CA.checkUrlVp();
-		CA.drag();
+		//CA.drag();
+		CA.dragWindows();
+	},
+	dragWindows: function(){
+		var currentDraggedElement;
+		$(".draggable").draggable({
+			start: function(e){
+			    currentDraggedElement = e.target;
+			    $(currentDraggedElement).addClass("red");
+			},
+			stop: function(e){
+			    $(currentDraggedElement).removeClass("red");
+			},
+			helper: "clone",
+		    revert: "invalid"
+		}).droppable();
+
+		$(".draggable").on("dropover", function(e) {
+		    $(this).addClass("highlight");
+		});
+		$(".draggable").on("dropout", function (e){
+		    $(this).removeClass("highlight");
+		});
+		$(".draggable").on("drop", function (e){
+		    CA.swapElements($(this)[0], currentDraggedElement);
+				$(this).removeClass("highlight");
+		    currentDraggedElement = null;
+		});
+	},
+	swapElements: function(elm1, elm2) {
+		console.log(elm1, elm2);
+	    var parent1, next1,
+	        parent2, next2;
+
+	    parent1 = elm1.parentNode;
+	    next1   = elm1.nextSibling;
+	    parent2 = elm2.parentNode;
+	    next2   = elm2.nextSibling;
+
+	    parent1.insertBefore(elm2, next1);
+	    parent2.insertBefore(elm1, next2);
 	},
 	panZoom: function(x,y){
 		x = typeof x !== 'undefined' ? x : this.containerX;
@@ -22,7 +62,7 @@ var CA = {
 
 		var $section = $('body');
 		$panzoom = $section.find('.container-fluid').panzoom();
-		
+
 		$panzoom.parent().on('mousewheel.focal', function( e ) {
 			e.preventDefault();
 			var delta = e.delta || e.originalEvent.wheelDelta;
@@ -38,12 +78,12 @@ var CA = {
 		$panzoom.panzoom("zoom", 1.0);
 		this.pz = $panzoom;
 	},
-	resetPanZoom: function(){	
-		CA.pz.panzoom("pan", this.containerX, this.containerY);  
+	resetPanZoom: function(){
+		CA.pz.panzoom("pan", this.containerX, this.containerY);
 	},
 	initResetPanZoomHandler: function(){
-		$(document).bind('keypress', function(event) {	
-			if( event.which === 82 && event.shiftKey && $(document.activeElement).prop("tagName") == "BODY") {			
+		$(document).bind('keypress', function(event) {
+			if( event.which === 82 && event.shiftKey && $(document.activeElement).prop("tagName") == "BODY") {
 				CA.resetPanZoom();
 			}
 		});
@@ -51,20 +91,20 @@ var CA = {
 	highlightText: function(string, id){
 		var tokens = string.split(" ");
 		var colors = ['red','blue','green','orange'];
-		
+
 		for(i=0;i<tokens.length;i++){
 			if(this.stopWords.indexOf(tokens[i]) == -1){
 				//Specify the elements in which it is allowed to replace the html/text.
 				$('#functional, .selectedcontainer, #technical, #implementation').each(function()
 				{
-					var $el = $(this);	
-					var regex = new RegExp(tokens[i],"g");		
+					var $el = $(this);
+					var regex = new RegExp(tokens[i],"g");
 					$el.html( $el.html().replace(regex, "<span style=\"text-decoration: underline\" data-id=\""+ id +"\">"+tokens[i]+"</span>") );
-					var regex = new RegExp(tokens[i].capitalizeFirstLetter(),"g");	
+					var regex = new RegExp(tokens[i].capitalizeFirstLetter(),"g");
 					$el.html( $el.html().replace(regex, "<span style=\"text-decoration: underline\" data-id=\""+ id +"\">"+tokens[i].capitalizeFirstLetter() +"</span>") );
 					console.log(colors[CA.colorIndex]);
-					$("[data-id="+ id +"]").css({ "color": colors[CA.colorIndex] });	
-					
+					$("[data-id="+ id +"]").css({ "color": colors[CA.colorIndex] });
+
 				});
 			}
 		}
@@ -72,16 +112,16 @@ var CA = {
 	},
 	initSelect2: function(){
 		var data = [
-			{ id: 0, text: 'As a manager, I want to create an event'}, 
-			{ id: 1, text: 'As a manager, I want to publish the line-up' }, 
-			{ id: 2, text: 'As a manager, I want to change the event date' }, 
+			{ id: 0, text: 'As a manager, I want to create an event'},
+			{ id: 1, text: 'As a manager, I want to publish the line-up' },
+			{ id: 2, text: 'As a manager, I want to change the event date' },
 			{ id: 3, text: 'As a manager, I want to fix Legal stuff' },
 			{ id: 4, text: 'As a manager, I want to indicate a price' }
 			];
-		
-		
-		
-		
+
+
+
+
 		$('#select2-requirements-database').select2({
 			placeholder: "Select a user story",
 			allowClear: true,
@@ -113,10 +153,10 @@ var CA = {
 				break;
 			default:
 				break;
-		}	
+		}
 	},
 	FAMsubModuleTrigger: function() {
-		
+
 			$( "#FAMmodule3" ).click(function() {
 				$("#line3").show();
 				$("#line4").show();
@@ -139,7 +179,7 @@ var CA = {
 				$("#line4").hide();
 				$("#FAMproductScope").animate({ 'zoom': 1.0 }, 400);
 			});
-		
+
 			$( "#FAMmodule2" ).click(function() {
 				$("#line1").show();
 				$("#line2").show();
@@ -203,26 +243,26 @@ var CA = {
 		}).on('blur', function(e){
 			console.log('blur');
 			var position = $('.container-fluid').position();
-			CA.panZoom(position.left, position.top);		
+			CA.panZoom(position.left, position.top);
 		});
 	},
 
 	checkUrlVp: function (){
 
 		if(window.location.href.indexOf("technicalviewpoint") > -1) {
-       		$('#techcont').show();    	
+       		$('#techcont').show();
        	}
 
        	if(window.location.href.indexOf("functionalviewpoint") > -1) {
-       		$('#FAMproductScope').show();    	
+       		$('#FAMproductScope').show();
        	}
 
        	if(window.location.href.indexOf("sourcecode") > -1) {
-       		$('#sourcecodebox').show();    	
+       		$('#sourcecodebox').show();
        	}
 
        	if(window.location.href.indexOf("manual") > -1) {
-       		$('#manualbox').show();    	
+       		$('#manualbox').show();
        	}
 	},
 
@@ -242,8 +282,8 @@ var CA = {
 
 $(function(){
 	CA.construct();
-	
+
 	String.prototype.capitalizeFirstLetter = function() {
 		return this.charAt(0).toUpperCase() + this.slice(1);
-	}		
+	}
 });

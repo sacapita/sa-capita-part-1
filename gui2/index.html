@@ -5,9 +5,9 @@
 		<link rel="stylesheet" type="text/css" href="css/select2.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-		<link href="css/select2.css" rel="stylesheet" />		
+		<link href="css/select2.css" rel="stylesheet" />
 		<script src="js/jquery.js"></script>
-		<script src="js/bootstrap.min.js"></script>		
+		<script src="js/bootstrap.min.js"></script>
 		<script src="js/select2.min.js"></script>
 		<script src="js/scrollTo.min.js"></script>
 		<script src="js/jquery.panzoom.js"></script>
@@ -17,25 +17,25 @@
 	<body>
 		<div class="container-fluid">
 			<h1>GUI 2 THE SA tool</h1>
-			<div class="content">				
-				<div id="requirements">
-					
+			<div class="content">
+				<div id="requirements" class="draggable">
+
 					<h3>Requirement</h3>
 					<div id="trapezoid">Epic vision:<br/> We want to sell tickets for business trips</div>
 					<div class="vertical-arrow"></div>
-					<div class="arrow-down"></div>							
+					<div class="arrow-down"></div>
 					<div class="database">
 						User story database:<br/>
-						<input type="hidden" id="select2-requirements-database" style="width: 300px;" tabindex="-1" title="">					
+						<input type="hidden" id="select2-requirements-database" style="width: 300px;" tabindex="-1" title="">
 					</div>
 					<div class="selectedcontainer">
 						<ul id="selectedreqs">
-							
+
 						</ul>
 					</div>
 				</div>
-				
-				<div id="functional">
+
+				<div id="functional" class="draggable">
 					<h3>Functional arch</h3>
 					<div id="FAMproductScope">
 					<!--<canvas id="contractManagementCanvas" width="750px" height="115px"></canvas>
@@ -61,7 +61,7 @@
 							<!--payee interaction-->
 							<div class="FAMhorizontalLine" style="left: 68px; top: 469px;"></div><div class="FAMarrow-left" style="left: 68px; top: 465px;"></div>
 							<div id="FAMmodule3" class="FAMmodule" style="width: 200px; height: 50px; background-color: #00FFFF; left: 150px; top: 450px;">Contract management</div><div class="FAMarrowText" style="left: 80px; top:435px;">payee<br>interaction</div>
-								
+
 							<div id="FAMmodule1Submodule" class="FAMmoduleSubmodule" style="width: 200px; height: 240px; zoom: 2; top: 300px; left: 180px;">Contract management <div class="close" style="cursor: pointer;">X</div>
 									<div id="FAMmodule1SubSubmodule1" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 70px; top: 20px;">Contract baseline</div>
 									<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 40px; top: 100px;">Event administration</div>
@@ -134,8 +134,8 @@
 						</div>
 					</div>
 				</div>
-		
-				<div id="technical">
+
+				<div id="technical" class="draggable">
 				<h3>Technical arch</h3>
 					<div id="techcont">
 						<div id="toplayer">Top layer</div>
@@ -254,8 +254,8 @@
 						</div>
 					</div>
 				</div>
-					
-					<div id="implementation">
+
+					<div id="implementation" class="draggable">
 						<h3>Implementation</h3>
 						<div id="sourceCodeAndManualPart">
 							<div class="box">Configurator</div>
@@ -280,9 +280,8 @@
 							<div class="box" id="manualTestScript">Test script</div>
 						</div>
 					</div>
-				</div>		
+				</div>
 		</div>
-		
+
 	</body>
 </html>
-
