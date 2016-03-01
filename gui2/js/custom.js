@@ -5,7 +5,7 @@ var CA = {
 	colorIndex: 0,
 	stopWords: ['As','a','I','want','the','an','to'],
 	construct: function(){
-		//CA.panZoom();
+		CA.panZoom();
 		CA.initSelect2();
 		CA.scrollToSection();
 		//CA.contractManagementCanvas();
@@ -14,8 +14,8 @@ var CA = {
 		CA.initResetPanZoomHandler();
 		CA.initTextboxFocusHandler();
 		CA.checkUrlVp();
-		//CA.drag();
-		CA.dragWindows();
+		CA.drag();
+		//CA.dragWindows();
 	},
 	dragWindows: function(){
 		var currentDraggedElement;
@@ -138,21 +138,15 @@ var CA = {
 	},
 	scrollToSection: function(){
 		var section = window.location.hash;
-		switch(section){
-			case "#developer":
-				$("html").scrollTo($("#implementation"), {duration: 500});
-				console.log("dev");
-				break;
-			case "#architect":
+		console.log(section);
+		if(section.startsWith("#developer")){
+			$("html").scrollTo($("#implementation"), {duration: 500});
+		}else if(section.startsWith("#architect")){
 				$(".content").scrollTo("#functional", 300);
-				console.log("archi");
-				break;
-			case "#manager":
+		}else if(section.startsWith("#manager")){
 				$(".content").scrollTo("#requirements", 300);
-				console.log("manager");
-				break;
-			default:
-				break;
+		}else{
+			console.log("hash klopt niet");
 		}
 	},
 	FAMsubModuleTrigger: function() {

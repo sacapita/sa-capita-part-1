@@ -17,6 +17,7 @@ select { width: 300px; }
 #implementation { display: inline-block; width: 500px; min-height: 10px; background-color: #fff; }
 
 /*draggable*/
+.draggable { border: 3px solid #FFF; }
 .highlight,
 .dragging{
     background-color:#ccc;
