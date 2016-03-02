@@ -1,0 +1,281 @@
+html { font-family: 'Open Sans', sans-serif; }
+select { width: 300px; }
+
+.choose-role { width: 300px; margin: 50px auto;}
+.choose-role a { display: block; padding: 15px 20px; border: 1px solid #ccc; margin-top: 10px; color: #333;}
+.choose-role a:hover { background-color: #333; color: #FFF; cursor: pointer; text-decoration: none; }
+
+#requirements,
+#functional,
+#technical,
+#implementation { margin-right: 10px; }
+#requirements { display: inline-block;  width: 400px; min-height: 10px; background-color: #fff;}
+#functional { display: inline-block;  width: 700px; min-height: 10px; background-color: #fff; vertical-align: top;}
+#technical { display: inline-block;  width: 800px; min-height: 10px; background-color: #fff; vertical-align: top; }
+#implementation { display: inline-block; width: 500px; min-height: 10px; background-color: #fff; }
+
+.edit_epic {  width: 80%; border: 1px solid #333; margin-bottom: 30px; }
+.panel-body .active { border: 2px solid blue; }
+
+/*draggable*/
+.draggable { border: 3px solid #FFF; }
+.highlight,
+.dragging{
+    background-color:#ccc;
+    border: 3px dashed #333;
+}
+
+
+.classborder {border: 1px solid #000; width:auto; position: relative;}
+
+.testarrow {
+  width: 0.8em;
+  height: 0.8em;
+  border-top: 0.2em solid #333;
+  border-right: 0.2em solid #333;
+  position: absolute;
+  z-index: 1000;
+}
+
+.dependencyline {
+  height: 0px;
+  border-bottom: 2px dashed black;
+  border-right: 2px dashed black;
+  position: absolute;
+  z-index: 1000;
+}
+
+
+/* From GUI1 */
+#trapezoid {
+    border-bottom: 100px solid red;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    height: 0;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#ticketSalesCanvas {
+	position: absolute;
+	left:-393px;
+	top: 100px;
+	z-index: 10000;
+	display: none;
+	border: 1px black solid;
+}
+
+#contractManagementCanvas {
+	position: absolute;
+	left:160px;
+	top: 180px;
+	z-index: 10000;
+	display:none;
+	border: 1px black solid;
+}
+
+.vertical-arrow {
+    background: darkcyan;
+    padding: 15px 0;
+    width: 50px;
+    height: 100px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 20px solid darkcyan;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box {
+	width: auto;
+	background-color: #ccc;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+
+#sourceCodeAndManualPart {
+	width: auto;
+	height: auto;
+	float:left;
+	margin-left: 40px;
+}
+
+.user-manual ul { list-style-type: none; padding-left: 0px;}
+.user-manual ul  li { border-bottom: 1px solid #222; margin: 5px auto 5px 15px; }
+
+#line1, #line2, #line3, #line4,
+#FAMmodule2Submodule,
+#FAMmodule1Submodule { display: none; }
+
+#manualTestScript {
+	height: 100px;
+	background-color: #ccc;
+	margin-left: auto;
+  	margin-right: auto;
+  	margin-top: 50px;
+}
+
+#FAMproductScope {
+	width: 545px;
+	height: 320px;
+	background-color: #ccc;
+	position: relative;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-left: 100px;
+	margin: 50 auto;
+	display: none;
+	transform: scale(1.1,1.1);
+}
+
+#FAMproductScopeContainer {
+	position: absolute;
+	left: 10px;
+	top: -300px;
+}
+
+.FAMmodule {
+	position:absolute;
+	word-wrap: break-word;
+	 box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    z-index: 1;
+}
+
+.FAMmoduleSubmodule {
+	background-color: #00FFFF;
+	position: absolute;
+	display: none;
+	z-index: 1000;
+	display: block;
+}
+
+.close {
+	float:right;
+}
+
+.FAMmoduleSubSubmodule {
+	background-color: #fff;
+	position: absolute;
+	z-index: 1;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.featureList {
+	background-color: #000;
+	color: #fff;
+	position: absolute;
+	left: 40px;
+	top: 120px;
+	display: none;
+	z-index: 2;
+}
+
+.FAMhorizontalLine {
+  height: 0px;
+  width: 80px;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  position: absolute;
+}
+
+.FAMverticalLine {
+  height: 42px;
+  width: 0px;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  position: absolute;
+}
+
+.FAMarrow-up {
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid black;
+	position: absolute;
+}
+
+.FAMarrow-down {
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid black;
+	position: absolute;
+}
+
+.FAMarrow-right {
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 5px solid black;
+	position:absolute;
+}
+
+.FAMarrow-left {
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-right: 5px solid black;
+	position: absolute;
+}
+
+.FAMarrowText {
+	position: absolute;
+	font-size: 10px;
+	color: black;
+}
+
+#techcont {
+	width: 700px;
+	height: 900px;
+	background-color: #ccc;
+	position: relative;
+	margin: -25px auto;
+	margin-bottom: 10px;
+	display:none;
+  transform: scale(0.9,0.9);
+}
+
+#techcontcont {
+	position: absolute;
+	left: -1250px;
+	top: -130px;
+}
+
+#toplayer {
+	height: 240px;
+}
+
+#centrallayer {
+	height: 450px;
+}
+
+#bottomlayer {
+}
+
+.contentbox {
+	height: auto;
+	display:none;
+	padding: 15px 20px; border: 1px solid #ccc; color: #333;
+}
+
+#sourcecodebox, #manualbox {
+	display:none;
+}

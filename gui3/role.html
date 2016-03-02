@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+		<script src="js/jquery.js"></script>
+		<script src="js/role.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>GUI 2</h1>
+			<div class="choose-role">
+				<a class="developer">Developer</a>
+					<div id="developerbox" class="contentbox">Please select epic:</br/>
+						<select id="epicselect1" style="width:260px;">
+						  <option id="epicoption" value="volvo" width="50">We want to sell tickets for business trips</option>
+						  <option id="epicoption" value="option2">option 2</option>
+						  <option id="epicoption" value="option3">option 3</option>
+						</select>
+						<br/><br/>
+						Please select below where you are interested in.
+						<br/><br/>
+						<input type="checkbox" name="viewpoint1" value="functionalviewpoint">Functional viewpoint<br/>
+						<input type="checkbox" name="viewpoint1" value="technicalviewpoint">Technical viewpoint<br/>
+						<input type="checkbox" name="viewpoint1" value="sourcecode" checked>Source code<br/>
+						<input type="checkbox" name="viewpoint1" value="manual">Manual<br/><br/>
+						<!--<a href="index.html#developer" style="border: 1px black solid;">Continue..</a>-->
+						<input type="submit" id="submit_developer" value="continue">
+					</div>
+				<a class="architect">Software Architect</a>
+					<div id="architectbox" class="contentbox">Please select epic:
+						<select id="epicselect2" style="width:260px;">
+						  <option id="epicoption" value="volvo" width="50">We want to sell tickets for business trips</option>
+						  <option id="epicoption" value="option2">option 2</option>
+						  <option id="epicoption" value="option3">option 3</option>
+						</select>
+						<br/><br/>
+						Please select below where you are interested in.
+						<br/><br/>
+						<input type="checkbox" name="viewpoint2" value="functionalviewpoint" checked>Functional viewpoint<br/>
+						<input type="checkbox" name="viewpoint2" value="technicalviewpoint" checked>Technical viewpoint<br/>
+						<input type="checkbox" name="viewpoint2" value="sourcecode">Source code<br/>
+						<input type="checkbox" name="viewpoint2" value="manual">Manual<br/><br/>
+						<input type="submit" id="submit_architect" value="continue">
+					</div>
+				<a class="manager">Manager</a>
+					<div id="managerbox" class="contentbox">Please select epic:
+						<select id="epicselect3" style="width:260px;">
+						  <option id="epicoption" value="volvo" width="50">We want to sell tickets for business trips</option>
+						  <option id="epicoption" value="option2">option 2</option>
+						  <option id="epicoption" value="option3">option 3</option>
+						</select>
+						<br/><br/>
+						Please select below where you are interested in.
+						<br/><br/>
+						<input type="checkbox" name="viewpoint3" value="functionalviewpoint" checked>Functional viewpoint<br/>
+						<input type="checkbox" name="viewpoint3" value="technicalviewpoint">Technical viewpoint<br/>
+						<input type="checkbox" name="viewpoint3" value="sourcecode">Source code<br/>
+						<input type="checkbox" name="viewpoint3" value="manual" checked>Manual<br/><br/>
+						<input type="submit" id="submit_manager" value="continue">
+					</div>
+			</div>
+		</div>
+
+	</body>
+</html>

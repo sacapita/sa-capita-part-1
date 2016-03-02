@@ -1,0 +1,383 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="css/select2.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+		<link href="css/select2.css" rel="stylesheet" />
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/select2.min.js"></script>
+		<script src="js/scrollTo.min.js"></script>
+		<script src="js/jquery.panzoom.js"></script>
+		<script src="js/custom.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<h1>GUI v3.0</h1>
+			<div class="content">
+
+				<div class="row">
+					<div class="col-md-12">
+						<div id="requirements" class="draggable">
+							<h3>Requirements</h3>
+							Epic vision:<br/>
+							<textarea class="edit_epic">We want to sell tickets for business trips</textarea>
+
+							<div class="database">
+								User story database:<br/>
+								<input type="hidden" id="select2-requirements-database" style="width: 300px;" tabindex="-1" title="">
+							</div>
+							<div class="selectedcontainer">
+								<ul id="selectedreqs">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-2">
+						<h2>Viewpoints</h2>
+						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+						  <div class="panel panel-default">
+						    <div class="panel-heading" role="tab" id="headingOne">
+						      <h4 class="panel-title">
+						        <a class="collapsed" role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+						          Context
+						        </a>
+						      </h4>
+						    </div>
+						    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+						      <div class="panel-body">
+
+						      </div>
+						    </div>
+						  </div>
+						  <div class="panel panel-default">
+						    <div class="panel-heading" role="tab" id="headingTwo">
+						      <h4 class="panel-title">
+						        <a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+						          Functional (1)
+						        </a>
+						      </h4>
+						    </div>
+						    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+						      <div class="panel-body">
+									 	<a href="#" data-id="functional" data-name="fam"><img src="images/fam.png" width="250" /></a>
+						      </div>
+						    </div>
+						  </div>
+						  <div class="panel panel-default">
+						    <div class="panel-heading" role="tab" id="headingThree">
+						      <h4 class="panel-title">
+						        <a class="collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						          Information (1)
+						        </a>
+						      </h4>
+						    </div>
+						    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+						      <div class="panel-body">
+										<a href="#" data-id="information" data-name="classdiagram"><img src="images/classdiagram.png" width="250" /></a>
+						      </div>
+						    </div>
+						  </div>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingThree">
+									<h4 class="panel-title">
+										<a class="collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+											Development
+										</a>
+									</h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+									<div class="panel-body">
+
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingThree">
+									<h4 class="panel-title">
+										<a class="collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+											Deployment
+										</a>
+									</h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+									<div class="panel-body">
+
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingThree">
+									<h4 class="panel-title">
+										<a class="collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+											Concurrency
+										</a>
+									</h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+									<div class="panel-body">
+
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingThree">
+									<h4 class="panel-title">
+										<a class="collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+											Operational
+										</a>
+									</h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+									<div class="panel-body">
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cold-md-10">
+						<h2>Werkveld</h2>
+
+						<div id="functional" class="draggable">
+							<h3>Functional arch</h3>
+							<div id="FAMproductScope">
+							<!--<canvas id="contractManagementCanvas" width="750px" height="115px"></canvas>
+							<canvas id="ticketSalesCanvas" width="750px" height="198px"></canvas>-->
+							<!--decomposition-->
+							<div class="dependencyline" id="line1" style="width: 450px; left: -265px; top: 200px; transform: rotate(154deg);"></div>
+							<div class="dependencyline" id="line2" style="width: 250px; left: 158px; top: 200px; transform: rotate(127deg);"></div>
+							<div class="dependencyline" id="line3" style="width: 410px; left: 355px; top: 250px; transform: rotate(-167deg);"></div>
+							<div class="dependencyline" id="line4" style="width: 230px; left: 152px; top: 250px; transform: rotate(-155deg);"></div>
+
+								<div id="FAMproductScopeContainer">
+									<!--ticketing contract-->
+									<div class="FAMhorizontalLine" style="left: 470px; top: 470px;"></div><div class="FAMarrow-right" style="left: 550px; top: 467px;"></div><div class="FAMarrowText" style="left: 495px; top:440px;">ticketing<br> contract</div>
+									<!--event request-->
+									<div class="FAMhorizontalLine" style="left: 470px; top: 380px;"></div><div class="FAMarrow-left" style="left: 489px; top: 376px;"></div><div class="FAMarrowText" style="left: 495px; top:350px;">event<br>request</div>
+									<!--banking details-->
+									<div class="FAMhorizontalLine" style="left: -30px; top: 449px;"></div><div class="FAMarrow-left" style="left: -31px; top: 445px;"></div><div class="FAMarrow-right" style="left: 5px; top: 445px;"></div><div class="FAMarrowText" style="left: -35px; top:415px;">banking<br>details</div>
+
+									<div id="FAMmodule1" class="FAMmodule" style="width: 60px; height: 150px; background-color: #0000FF; color: #fff; left: 9px; top: 350px;">Payment</div>
+									<!--booking-->
+									<div class="FAMhorizontalLine" style="left: 70px; top: 369px;"></div><div class="FAMarrow-left" style="left: 69px; top: 365px;"></div>
+									<div id="FAMmodule2" class="FAMmodule" style="width: 200px; height: 50px; background-color: #00FFFF; left: 150px; top: 350px;">Ticket sales</div><div class="FAMarrowText" style="left: 90px; top:350px;">booking</div>
+									<!--payee interaction-->
+									<div class="FAMhorizontalLine" style="left: 68px; top: 469px;"></div><div class="FAMarrow-left" style="left: 68px; top: 465px;"></div>
+									<div id="FAMmodule3" class="FAMmodule" style="width: 200px; height: 50px; background-color: #00FFFF; left: 150px; top: 450px;">Contract management</div><div class="FAMarrowText" style="left: 80px; top:435px;">payee<br>interaction</div>
+
+									<div id="FAMmodule1Submodule" class="FAMmoduleSubmodule" style="width: 200px; height: 240px; zoom: 2; top: 300px; left: 180px;">Contract management <div class="close" style="cursor: pointer;">X</div>
+											<div id="FAMmodule1SubSubmodule1" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 70px; top: 20px;">Contract baseline</div>
+											<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 40px; top: 100px;">Event administration</div>
+											<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 40px; top: 170px;">Options handling</div>
+											<ul class="featureList">
+												<li>feature1</li>
+												<li>feature2</li>
+												<li>feature3</li>
+												<li>feature4</li>
+											</ul>
+											<!--contract version-->
+											<div class="FAMverticalLine" style="left: 100px; top: 60px;"></div><div class="FAMarrow-up" style="left: 95.5px; top: 59.5px;"></div><div class="FAMarrowText" style="left: 105px; top:75px;">contract version</div>
+											<!--option details-->
+											<div class="FAMverticalLine" style="left: 99px; height: 25px; top: 142px;"></div><div class="FAMarrow-up" style="left: 95px; top: 140px;"></div><div class="FAMarrow-down" style="left: 95px; top: 165px;"></div><div class="FAMarrowText" style="left: 105px; top:150px;">option details</div>
+											<!--payee interaction-->
+											<div class="FAMhorizontalLine" style="left: -20px; top: 130px;"></div><div class="FAMarrow-left" style="left: -24px; top: 127px;"></div><div class="FAMarrowText" style="left: -25px; top:115px;">payee interaction</div>
+											<!--ticket types-->
+											<div class="FAMhorizontalLine" style="left: -20px; top: 105px;"></div><div class="FAMarrow-left" style="left: -24px; top: 102px;"></div><div class="FAMarrowText" style="left: -24px; top:90px;">ticket types</div>
+											<!--terms of services-->
+											<div class="FAMhorizontalLine" style="left: -19px; top: 153px;"></div><div class="FAMverticalLine" style="left: 60px; top: 112px;"></div><div class="FAMarrow-left" style="left: -22px; top:149px;"></div><div class="FAMarrow-up" style="left: 55.5px; top: 139px;"></div><div class="FAMarrowText" style="left: -20px; top:140px;">terms of services</div>
+											<!--options-->
+											<div class="FAMhorizontalLine" style="left: -20px; top: 191.5px;"></div><div class="FAMarrow-right" style="left: 35px; top: 187px;"></div><div class="FAMarrowText" style="left: 0px; top:180px;">options</div>
+											<!--event details-->
+											<div class="FAMhorizontalLine" style="left: 140px; top: 121.5px;"></div><div class="FAMarrow-left" style="left: 140px; top: 117px;"></div><div class="FAMarrowText" style="left: 150px; top:108px;">event details</div>
+											<!--final contract-->
+											<div class="FAMhorizontalLine" style="left: 140px; top: 41px;"></div><div class="FAMarrow-right" style="left: 220px; top: 37px;"></div><div class="FAMarrowText" style="left: 170px; top:15px;">final contract</div>
+
+										</div>
+
+									<div id="FAMmodule2Submodule" class="FAMmoduleSubmodule" style="width: 300px; height: 280px; zoom: 1.5; top: 400px; left: -170px;">Ticket sales <div class="close" style="cursor: pointer;">X</div>
+											<div id="FAMmodule1SubSubmodule1" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 30px; top: 20px;">Visitor<br>management</div>
+											<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 180px; top: 20px;">Event<br>registration</div>
+											<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 60px; top: 90px;">Ticket<br>selection</div>
+											<ul class="featureList">
+												<li>feature1</li>
+												<li>feature2</li>
+												<li>feature3</li>
+												<li>feature4</li>
+											</ul>
+											<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 150px; top: 155px;">Type<br>management</div>
+											<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 20px; top: 155px;">Pre-payment<br>arrangement</div>
+											<div id="FAMmodule1SubSubmodule2" class="FAMmoduleSubSubmodule" style="height: 20x; width:100px; left: 180px; top: 225px;">Event<br>reporting</div>
+											<div class="FAMverticalLine" style="left: 100.5px; top: 45px;"></div><div class="FAMarrow-down" style="left: 96px; top: 85px;"></div><div class="FAMarrowText" style="left: 105px; top:70px;">visitor details</div>
+											<div class="FAMverticalLine" style="left: 200.5px; top: 190px;"></div><div class="FAMarrow-up" style="left: 196px; top: 194px;"></div><div class="FAMarrow-down" style="left: 196px; top: 220px;"></div><div class="FAMarrowText" style="left: 205px; top:205px;">ticket overview</div>
+											<div class="FAMhorizontalLine" style="left: 281px; top: 251px;"></div><div class="FAMarrow-left" style="left: 280px; top: 247px;"></div><div class="FAMarrow-right" style="left: 358px; top: 247px;"></div><div class="FAMarrowText" style="left: 290px; top:238px;">reports</div>
+											<div class="FAMhorizontalLine" style="left: 250px; top: 171px;"></div><div class="FAMarrow-left" style="left: 250px; top: 166.5px;"></div><div class="FAMarrow-right" style="left: 328px; top: 166.5px;"></div><div class="FAMarrowText" style="left: 260px; top:145px;">ticket types</div>
+											<div class="FAMverticalLine" style="left: 35.5px; top: 52px; height: 100px"></div><div class="FAMverticalLine" style="left: 100.5px; top: 110px;"></div><div class="FAMarrow-down" style="left: 31.5px; top:150px;"></div><div class="FAMarrow-down" style="left: 96px; top: 150px;"></div><div class="FAMarrowText" style="left: 60px; top:135px;">final ticket</div>
+											<div class="FAMhorizontalLine" style="left: 165px; top: 109px; width: 35px;"></div><div class="FAMverticalLine" style="left: 223.5px; top: 53px; height: 100px;"></div><div class="FAMarrow-down" style="left: 220px; top: 149px;"></div><div class="FAMarrowText" style="left: 5px; top:100px;">payment<br>details</div><div class="FAMarrowText" style="left: 5px; top:100px;">payment<br>details</div><div class="FAMarrowText" style="left: 230px; top:100px;">package<br>structures</div>
+											<div class="FAMhorizontalLine" style="left: 282px; top: 34px;"></div><div class="FAMarrow-left" style="left: 280px; top: 30px;"></div><div class="FAMarrowText" style="left: 305px; top:10px;">event details</div>
+											<div class="FAMverticalLine" style="left: 199px; top: 110px; height:50px"></div><div class="FAMarrow-left" style="left: 160px; top: 105px;"></div><div class="FAMarrowText" style="left: 165px; top:98px;">templates</div>
+
+
+
+										</div>
+
+									<!--event details-->
+									<div class="FAMhorizontalLine" style="left: 350px; top: 471px;"></div><div class="FAMarrow-right" style="left: 416px; top: 467px;"></div><div class="FAMarrow-left" style="left: 349px; top: 467px;"></div><div class="FAMarrowText" style="left: 355px; top:440px;">event details</div>
+									<!--ticket types-->
+									<div class="FAMverticalLine" style="left: 251px; top: 402px; height:45px;"></div><div class="FAMarrow-up" style="left: 247px; top: 400px;"></div><div class="FAMarrow-down" style="left: 247px; top: 445px;"></div><div class="FAMarrowText" style="left: 255px; top:410px;">ticket types</div>
+									<!--terms of services-->
+									<div class="FAMverticalLine" style="left: 180px; top: 503px;"></div><div class="FAMarrow-up" style="left: 176px; top: 500px;"></div><div class="FAMarrowText" style="left: 115px; top:490px;">terms of services</div>
+									<!--options-->
+									<div class="FAMverticalLine" style="left: 251px; top: 500px;"></div><div class="FAMarrow-up" style="left: 247px; top: 499px;"></div><div class="FAMarrow-down" style="left: 247px; top: 526px;"></div><div class="FAMarrowText" style="left: 255px; top:510px;">options</div>
+									<div id="FAMmodule4" class="FAMmodule" style="width: 70px; height: 148px; background-color: #0000FF; color: #fff; left: 420px; top: 350px;">Acquisition</div>
+									<div id="FAMmodule5" class="FAMmodule" style="width: 100px; height: 50px; background-color: #fff; left: 90px; top: 530px;">Legal</div>
+									<div id="FAMmodule6" class="FAMmodule" style="width: 100px; height: 50px; background-color: #fff; left: 240px; top: 530px;">Merchandising</div>
+									<div id="FAMmodule7" class="FAMmodule" style="width: 100px; height: 50px; background-color: #fff; left: 395px; top: 530px;">CRM</div>
+									<!--customer details-->
+									<div class="FAMverticalLine" style="left: 449px; top: 495px;"></div><div class="FAMarrow-up" style="left: 445px; top: 497px;"></div><div class="FAMarrow-down" style="left: 445px; top: 526px;"></div><div class="FAMarrowText" style="left: 455px; top:500px;">customer details</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="technical" class="draggable">
+						<h3>Technical arch</h3>
+							<div id="techcont">
+								<div id="toplayer">Top layer</div>
+								<div class="classborder"></div>
+								<div id="centrallayer">Central layer</div>
+								<div class="classborder"></div>
+								<div id="bottomlayer">Legal and externals</div>
+								<div id="techcontcont">
+									<div class="testarrow" style="-moz-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg); left: 1653px; top: 280px;"></div>
+									<!--dependency from payment to sales-->
+									<div class="dependencyline" style="width: 145px; left: 1515px; top: 285px;"></div>
+									<!--dependency from payment to contract-->
+									<div class="testarrow" style="-moz-transform: rotate(135deg); -webkit-transform: rotate(135deg); transform: rotate(135deg); left: 1460px; top: 483px;"></div>
+									<div class="dependencyline" style="width: 155px; left: 1388px; top: 412px; -moz-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg);"></div>
+									<!--dependency from sales to contract-->
+									<div class="testarrow" style="-moz-transform: rotate(180deg); -webkit-transform: rotate(180deg); transform: rotate(180deg); left: 1520px; top: 486px;"></div>
+									<div class="dependencyline" style="width: 280px; left: 1482px; top: 395px; -moz-transform: rotate(135deg); -webkit-transform: rotate(135deg); transform: rotate(135deg);"></div>
+									<!--bi directional dependency from contract to merchandise-->
+									<div class="testarrow" style="-moz-transform: rotate(225deg); -webkit-transform: rotate(225deg); transform: rotate(225deg); left: 1558px; top: 515px;"></div>
+									<div class="testarrow" style="-moz-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg); left: 1653px; top: 515px;"></div>
+									<div class="dependencyline" style="width: 105px; left: 1557px; top: 520px;"></div>
+									<!--bi directional dependency from payment to event-->
+									<div class="testarrow" style="-moz-transform: rotate(225deg); -webkit-transform: rotate(225deg); transform: rotate(225deg); left: 1558px; top: 637px;"></div>
+									<div class="testarrow" style="-moz-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg); left: 1655px; top: 637px;"></div>
+									<div class="dependencyline" style="width: 105px; left: 1557px; top: 642px;"></div>
+									<!--dependency from contract to legal-->
+									<div class="testarrow" style="-moz-transform: rotate(135deg); -webkit-transform: rotate(135deg); transform: rotate(135deg); left: 1520px; top: 913px;"></div>
+									<div class="dependencyline" style="width: 250px; left: 1400px; top: 790px; -moz-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg);"></div>
+									<!--dependency from event to CRM interface-->
+									<div class="testarrow" style="-moz-transform: rotate(135deg); -webkit-transform: rotate(135deg); transform: rotate(135deg); left: 1741px; top: 855px;"></div>
+									<div class="dependencyline" style="width: 65px; left: 1714px; top: 830px; -moz-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg);"></div>
+									<!--assignment line from CRM to CRM interface-->
+									<div style="width: 22px; left: 1734px; top: 906px; -moz-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); position: absolute; border: 1px solid #000;"></div>
+									<div style="height: 30px; width: 150px; border: 1px solid #000; position: absolute; left: 1350px; top: 160px; background: #fff;">Payment Module</div>
+									<div style="height: 160px; width: 180px; border: 1px solid #000; position: absolute; left: 1350px; top: 190px; background: #fff;">
+										<div id="class" style="height: 130px; width: 150px; border: 1px solid #000; position: absolute; left: 15px; top: 15px;">
+											<center>Payment</center>
+											<div class="classborder"></div>
+											- paymentinfo
+											<div class="classborder"></div>
+											+ getBankingDetails()</br>
+											+ getPayeeInt(contract)</br>
+											+ getBooking(sales)</br>
+											+ processBooking()
+										</div>
+									</div>
+									<div style="height: 30px; width: 150px; border: 1px solid #000; position: absolute; left: 1650px; top: 160px; background: #fff;">Sales Module</div>
+									<div style="height: 120px; width: 180px; border: 1px solid #000; position: absolute; left: 1650px; top: 190px; margin-bottom: -170px; background: #fff;">
+										<div id="class" style="height: 90px; width: 150px; border: 1px solid #000; position: absolute; left: 15px; top: 15px;">
+											<center>Sales</center>
+											<div class="classborder"></div>
+											- salesinfo
+											<div class="classborder"></div>
+											+ getTicketType</br>(contract)
+										</div>
+									</div>
+								<div class="classborder"></div>
+									<div style="height: 30px; width: 150px; border: 1px solid #000; position: absolute; left: 1350px; top: 450px; background: #fff;">Contract Module</div>
+									<div style="height: 200px; width: 220px; border: 1px solid #000; position: absolute; left: 1350px; top: 480px; background: #fff;">
+										<div id="class" style="height: 170px; width: 190px; border: 1px solid #000; position: absolute; left: 15px; top: 15px;">
+											<center>Contract</center>
+											<div class="classborder"></div>
+											- payeeinteraction</br>
+											- tickettype</br>
+											- contracteventdetails</br>
+											- contractoptions
+											<div class="classborder"></div>
+											+ getEvent(event)</br>
+											+ getTOS(legal)</br>
+											+ getOptions(merchandise)
+										</div>
+									</div>
+									<div style="height: 30px; width: 150px; border: 1px solid #000; position: absolute; left: 1650px; top: 400px; background: #fff;">Merchandising Module</div>
+									<div style="height: 120px; width: 180px; border: 1px solid #000; position: absolute; left: 1650px; top: 430px; margin-bottom: -230px; background: #fff;">
+										<div id="class" style="height: 90px; width: 150px; border: 1px solid #000; position: absolute; left: 15px; top: 15px;">
+											<center>Merchandise</center>
+											<div class="classborder"></div>
+											- options
+											<div class="classborder"></div>
+											+ getContractOptions</br>(contract)
+										</div>
+									</div>
+									<div style="height: 30px; width: 150px; border: 1px solid #000; position: absolute; left: 1650px; top: 560px; background: #fff;">Acquisition Module</div>
+									<div style="height: 220px; width: 260px; border: 1px solid #000; position: absolute; left: 1650px; top: 590px; margin-bottom: 20px; background: #fff;">
+										<div id="class" style="height: 190px; width: 230px; border: 1px solid #000; position: absolute; left: 15px; top: 15px; background: #fff;">
+											<center>Event</center>
+											<div class="classborder"></div>
+											- eventname</br>
+											- eventtype
+											<div class="classborder"></div>
+											+ getEventRequest()</br>
+											+ getTicketingContract()</br>
+											+ getContractEventDetails(contract)</br>
+											+ getCustomerDetails()</br>
+											+ getContractOptions</br>(contract)
+										</div>
+									</div>
+									<div style="height: 30px; width: 150px; border: 1px solid #000; position: absolute; left: 1350px; top: 880px; background: #fff;">Legal Module</div>
+									<div style="height: 70px; width: 220px; border: 1px solid #000; position: absolute; left: 1350px; top: 910px; background: #fff;">
+										<div id="class" style="height: 50px; width: 190px; border: 1px solid #000; position: absolute; left: 15px; top: 15px; background: #fff;">
+											<center>Legal</center>
+											<div class="classborder"></div>
+											- termsofservicess
+										</div>
+									</div>
+
+
+									<div style="border-radius: 50%; width: 30px; height: 30px; border: 1px solid #000; position: absolute; left: 1730px; top: 867px; background: #fff;"></div>
+									<div style="width: 20px; position: absolute; left: 1765px; top: 870px;">CRMInterface</div>
+
+									<div style="height: 90px; width: 150px; border: 1px solid #000; position: absolute; left: 1650px; top: 918px; margin-bottom:-89px; background: #fff;">
+										<div style="height: 20px; width: 40px; border: 1px solid #000; position: absolute; left: -20px; top: 20px; background-color: #fff;"></div>
+										<div style="height: 20px; width: 40px; border: 1px solid #000; position: absolute; left: -20px; top: 50px; background-color: #fff;"></div>
+										<center>CRM</center>
+									</div>
+								</div>
+							</div>
+						</div>
+
+							<div id="implementation" class="draggable" style="display: none;">
+								<h3>Implementation</h3>
+								<div id="sourceCodeAndManualPart">
+									<div id="sourcecodebox" class="box">
+										<h3>Source code</h3>
+										<script src="http://gist-it.appspot.com/github/robertkrimen/gist-it-example/blob/master/example.js"></script>
+									</div>
+								</div>
+							</div>
+						</div><!-- end werkveld -->
+					</div><!-- end row -->
+				</div>
+		</div>
+	</body>
+</html>
