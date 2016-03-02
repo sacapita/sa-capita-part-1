@@ -9,18 +9,45 @@ var CA = {
 		CA.scrollToSection();
 		CA.FAMsubModuleTrigger();
 		CA.dragWindows();
+
+		$("#FAMproductScope").toggle();
+		$("#functional h3").toggle();
+		$("#techcont").toggle();
+		$("#technical h3").toggle();
+		CA.showLines();
 		$(".panel-body a").on('click', function(e){
 			e.preventDefault();
 			if($(this).data('name') == "fam"){
 				$("#FAMproductScope").toggle();
+				$("#functional h3").toggle();
 			}else if($(this).data('name') == "classdiagram"){
 				$("#techcont").toggle();
+				$("#technical h3").toggle();
+				CA.showLines();
 			}
 			$(this).find("img").toggleClass("active");
 		})
 	},
-	showViews: function(){
-
+	showLines: function(){
+		var f = $("#FAMmodule4").offset();
+		var fw = $("#FAMmodule4").width();
+		var t = $("#contractmodule").offset();
+		var fx = f.left + fw;
+		var fy = f.top;
+		var tx = t.left;
+		var ty = t.top;
+		var a = Math.abs(fy - ty);
+		var b = Math.abs(fx - tx);
+		var c = CA.pythagoras(a, b);
+		var hoek = CA.degrees(Math.asin(a/c));
+		console.log(fx, fy, tx, ty, a, b, c, hoek);
+		$("body").after("<span style=\"border: 2px dashed #333; position: absolute; width: "+ c +"; top: "+ (fy) +"; left: "+ fx +"; transform-origin: 0% 0%; transform: rotate("+hoek+"deg);\"></span>");
+	},
+	degrees: function(radians){
+		return radians * (180 / Math.PI);
+	},
+	pythagoras: function(a, b){
+		return Math.sqrt(a * a + b * b);
 	},
 	dragWindows: function(){
 		var currentDraggedElement;

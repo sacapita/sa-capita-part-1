@@ -14,6 +14,9 @@ select { width: 300px; }
 #technical { display: inline-block;  width: 800px; min-height: 10px; background-color: #fff; vertical-align: top; }
 #implementation { display: inline-block; width: 500px; min-height: 10px; background-color: #fff; }
 
+#functional h3, 
+#technical h3 { display: none; }
+
 .edit_epic {  width: 80%; border: 1px solid #333; margin-bottom: 30px; }
 .panel-body .active { border: 2px solid blue; }
 
