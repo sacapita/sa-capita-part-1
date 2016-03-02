@@ -14,7 +14,10 @@ var CA = {
 		$("#functional h3").toggle();
 		$("#techcont").toggle();
 		$("#technical h3").toggle();
-		CA.showLines();
+	//	CA.showLine($("#FAMmodule4"), $("#contractmodule"));
+	//	CA.showLine($("#FAMmodule5"), $("#paymentmodule"));
+
+
 		$(".panel-body a").on('click', function(e){
 			e.preventDefault();
 			if($(this).data('name') == "fam"){
@@ -28,10 +31,10 @@ var CA = {
 			$(this).find("img").toggleClass("active");
 		})
 	},
-	showLines: function(){
-		var f = $("#FAMmodule4").offset();
-		var fw = $("#FAMmodule4").width();
-		var t = $("#contractmodule").offset();
+	showLine: function(elem1, elem2){
+		var f = elem1.offset();
+		var fw = elem1.width();
+		var t = elem2.offset();
 		var fx = f.left + fw;
 		var fy = f.top;
 		var tx = t.left;
@@ -40,8 +43,11 @@ var CA = {
 		var b = Math.abs(fx - tx);
 		var c = CA.pythagoras(a, b);
 		var hoek = CA.degrees(Math.asin(a/c));
+		if(ty-fy < 0){
+			hoek = hoek * -1;
+		}
 		console.log(fx, fy, tx, ty, a, b, c, hoek);
-		$("body").after("<span style=\"border: 2px dashed #333; position: absolute; width: "+ c +"; top: "+ (fy) +"; left: "+ fx +"; transform-origin: 0% 0%; transform: rotate("+hoek+"deg);\"></span>");
+		$("body").after("<span class=\"connectionline\" style=\"border: 2px dashed #333; position: absolute; width: "+ c +"px; top: "+ (fy) +"px; left: "+ fx +"px; transform-origin: 0% 0%; transform: rotate("+hoek+"deg);\"></span>");
 	},
 	degrees: function(radians){
 		return radians * (180 / Math.PI);
@@ -151,9 +157,15 @@ var CA = {
 	FAMsubModuleTrigger: function() {
 
 			$( "#FAMmodule3" ).click(function() {
+				$(".connectionline").remove();
 				$("#line3").show();
 				$("#line4").show();
-				$("#FAMproductScope").animate({ 'zoom': 0.7 }, 400);
+				$("#FAMproductScope").animate({ 'zoom': 0.7 }, 400, function(){
+					setTimeout(function(){
+						CA.showLine($("#FAMmodule4"), $("#contractmodule"));
+						CA.showLine($("#FAMmodule5"), $("#paymentmodule"));
+					}, 500);
+				});
 				$("#contractManagementCanvas").show('fast').promise().done(function () {
 					$( "#FAMmodule1Submodule" ).show('fast');
 					$( "#FAMmodule1Submodule" ).animate({
