@@ -17,6 +17,48 @@ var CA = {
 	//	CA.showLine($("#FAMmodule4"), $("#contractmodule"));
 	//	CA.showLine($("#FAMmodule5"), $("#paymentmodule"));
 
+		$( "#drawlinebutton" ).click(function() {
+			var div1 = document.getElementById('FAMmodule3');
+		    var div2 = document.getElementById('contractmodule');
+			var div3 = document.getElementById('FAMmodule5');
+		    var div4 = document.getElementById('legalmodule');
+		  	connect(div3, div4, "#000", 5);
+		    connect(div1, div2, "#000", 5);
+	   });
+
+		function connect(div1, div2, color, thickness) {
+		    var off1 = getOffset(div1);
+		    var off2 = getOffset(div2);
+		    // bottom right
+		    var x1 = off1.left + off1.width;
+		    var y1 = off1.top + off1.height;
+		    // top right
+		    var x2 = off2.left + off2.width;
+		    var y2 = off2.top;
+		    // distance
+		    var length = Math.sqrt(((x2-x1) * (x2-x1)) + ((y2-y1) * (y2-y1)));
+		    // center
+		    var cx = ((x1 + x2) / 2) - (length / 2);
+		    var cy = ((y1 + y2) / 2) - (thickness / 2);
+		    // angle
+		    var angle = Math.atan2((y1-y2),(x1-x2))*(180/Math.PI);
+		    // make hr
+		    var htmlLine = "<div style='padding:0px; margin:0px; height:" + thickness + "px; background-color:" + color + "; line-height:1px; position:absolute; left:" + cx + "px; top:" + cy + "px; width:" + length + "px; -moz-transform:rotate(" + angle + "deg); -webkit-transform:rotate(" + angle + "deg); -o-transform:rotate(" + angle + "deg); -ms-transform:rotate(" + angle + "deg); transform:rotate(" + angle + "deg);' />";
+		    //
+		    alert(htmlLine);
+		    document.body.innerHTML += htmlLine; 
+		}
+
+		function getOffset( el ) {
+		    var rect = el.getBoundingClientRect();
+		    return {
+		        left: rect.left + window.pageXOffset,
+		        top: rect.top + window.pageYOffset,
+		        width: rect.width || el.offsetWidth,
+		        height: rect.height || el.offsetHeight
+		    };
+		}
+
 
 		$(".panel-body a").on('click', function(e){
 			e.preventDefault();
@@ -31,7 +73,7 @@ var CA = {
 			$(this).find("img").toggleClass("active");
 		})
 	},
-	showLine: function(elem1, elem2){
+	/*showLine: function(elem1, elem2){
 		var f = elem1.offset();
 		var fw = elem1.width();
 		var t = elem2.offset();
@@ -48,7 +90,7 @@ var CA = {
 		}
 		console.log(fx, fy, tx, ty, a, b, c, hoek);
 		$("body").after("<span class=\"connectionline\" style=\"border: 2px dashed #333; position: absolute; width: "+ c +"px; top: "+ (fy) +"px; left: "+ fx +"px; transform-origin: 0% 0%; transform: rotate("+hoek+"deg);\"></span>");
-	},
+	},*/
 	degrees: function(radians){
 		return radians * (180 / Math.PI);
 	},
