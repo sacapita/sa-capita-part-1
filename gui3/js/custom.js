@@ -32,13 +32,13 @@ var CA = {
 		})
 	},
 	showLine: function(elem1, elem2){
-		var f = elem1.offset();
+		var f = elem1;
 		var fw = elem1.width();
-		var t = elem2.offset();
-		var fx = f.left + fw;
-		var fy = f.top;
-		var tx = t.left;
-		var ty = t.top;
+		var t = elem2;
+		var fx = parseInt(f.css("left").replace('px','')) + fw;
+		var fy = parseInt(f.css("top").replace('px',''));
+		var tx = parseInt(t.css("left").replace('px',''));
+		var ty = parseInt(t.css("top").replace('px',''));
 		var a = Math.abs(fy - ty);
 		var b = Math.abs(fx - tx);
 		var c = CA.pythagoras(a, b);
